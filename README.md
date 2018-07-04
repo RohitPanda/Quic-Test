@@ -3,11 +3,18 @@
 This work continues [Youtube test][YouTube-test]https://github.com/sabyahsan/Youtube-test. <br>
 The goal of the thesis is testing QUIC performance for YouTube videos for IPv4 and IPv6.<br>
 
-The project consist of 3 projects: quic_probe, youtube_test and tcp_youtube_test.
+The project consist of 3 projects: lsquic probe client, quic youtube test and modified tcp youtube test.
+Tests were build on Ubuntu 18.04 LTS.
 
-## TCP YouTube test
+## Quickstart
 
-Tcp_youtube_test is old [Youtube test][YouTube-test].<br>
+To install libraries, run bash ./libs_installation.sh.<br>
+It installs globally: zlib, libevent, yasm. Locally: boringssl, lsquic-client, curl, ffmpeg and compiles all libraries.<br>
+Installing script works only for Debian as it executes apt-get. For manual installation or script description refer to [Manual installation](Manual installation).
+
+## YouTube test (tcp_youtube_test)
+
+YouTube test is continues [Youtube test][YouTube-test] with use of curl.<br>
 New features of test:<br>
 <ul>
  <li>Imported on CMake;</li>
@@ -22,11 +29,19 @@ New features of test:<br>
 To install test, install all libraries and run cmake & make.
 Then run the test with ./youtube_test, use --help
 
-## QUIC Probe
+## QUIC YouTube test (youtube_test)
 
-QUIC probe is a quic_client library for using it to download web pages or receive download size. <br>
-Based on [ls quic library][LSQUIC].<br>
-Lifecycle of usage is:<br>
+Instead of [Youtube test][YouTube-test] was build test, where curl is exchanged for [QUIC client library][QUIC client].<br>
+
+Repeats features of modified TCP test. There are 2 additional output fields for audio and video stream: quic version and http header version. More information can be requested with ./youtube_test --help_output<br>
+To install test, install all libraries, QUIC client library and run cmake & make.<br>
+Then run the test with ./youtube_test, use --help
+
+## QUIC client library(quic_probe)
+
+QUIC client library purposed for downloading web resource or receiving download size with head http request. <br>
+Based on [lsquic library][LSQUIC].<br>
+Life cycle of usage is:<br>
 <ol>
  <li>create_client</li>
  <li>for every set of request, can be used multiple times:
@@ -50,20 +65,6 @@ To check just donwload size, set is_header option = 1 for request.<br>
 
 To install client, install all libraries and run cmake & make. There will be static library libquic_client.a
 
-## Youtube test (QUIC)
-
-Instead of [Youtube test][YouTube-test] was build test, where curl is changed with quic_client(quic_probe).<br>
-
-Repeats features of modified TCP test. There are 2 additional output fields for audio and video stream: quic version and http header version.<br>
-To install test, install all libraries, quic_client and run cmake & make.<br>
-Then run the test with ./youtube_test, use --help
-
-
-## Quickstart
-
-To install libraries, run bash ./libs_installation.sh.<br>
-It installs globally: zlib, libevent, yasm. Locally: boringssl, lsquic-client, curl, ffmpeg<br>
-
 ## License
 
 [![Creative Commons License][license-image]][license]
@@ -79,6 +80,8 @@ The license **applies only to the template**; there are no restrictions on the r
 
 [YouTube-test]: https://github.com/sabyahsan/Youtube-test
 [LSQUIC]: https://github.com/litespeedtech/lsquic-client
+[Manual installation]: https://gitlab.lrz.de/cm/2018-sergey-masters-code#manual-installation
+[QUIC client]: https://gitlab.lrz.de/cm/2018-sergey-masters-code#quic-client-library(quic-probe)
 [overleaf]: https://www.overleaf.com/
 [tex-se]: https://tex.stackexchange.com/
 [license-compatible]: https://creativecommons.org/compatiblelicenses

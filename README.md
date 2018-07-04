@@ -10,7 +10,7 @@ Tests were build on Ubuntu 18.04 LTS.
 
 To install libraries, run bash ./libs_installation.sh.<br>
 It installs globally: zlib, libevent, yasm. Locally: boringssl, lsquic-client, curl, ffmpeg and compiles all libraries.<br>
-Installing script works only for Debian as it executes apt-get. For manual installation or script description refer to [Manual installation](Manual installation).
+Installing script works only for Debian as it executes apt-get. For manual installation or script description refer to [Manual installation][Manual installation].
 
 ## YouTube test (tcp_youtube_test)
 
@@ -80,7 +80,7 @@ The license **applies only to the template**; there are no restrictions on the r
 
 [YouTube-test]: https://github.com/sabyahsan/Youtube-test
 [LSQUIC]: https://github.com/litespeedtech/lsquic-client
-[Manual installation]: https://gitlab.lrz.de/cm/2018-sergey-masters-code#manual-installation
+[Manual installation]: https://gitlab.lrz.de/cm/2018-sergey-masters-code/wikis/Manual-installation
 [QUIC client]: https://gitlab.lrz.de/cm/2018-sergey-masters-code#quic-client-library(quic-probe)
 [overleaf]: https://www.overleaf.com/
 [tex-se]: https://tex.stackexchange.com/

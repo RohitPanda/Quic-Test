@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="quic_probe"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="quic_probe">
+				<Option output="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/quic_probe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir=""/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src"/>
+					<Add directory="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/test"/>
+					<Add directory="/home/sergei/Documents/git/lsquic-client/include"/>
+					<Add directory="/home/sergei/Documents/git/boringssl/include"/>
+					<Add directory="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/Makefile&quot;  VERBOSE=1 quic_probe"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="quic_probe/fast">
+				<Option output="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/quic_probe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir=""/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src"/>
+					<Add directory="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/test"/>
+					<Add directory="/home/sergei/Documents/git/lsquic-client/include"/>
+					<Add directory="/home/sergei/Documents/git/boringssl/include"/>
+					<Add directory="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/Makefile&quot;  VERBOSE=1 quic_probe/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="quic_client">
+				<Option output="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/libquic_client.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src"/>
+					<Add directory="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/test"/>
+					<Add directory="/home/sergei/Documents/git/lsquic-client/include"/>
+					<Add directory="/home/sergei/Documents/git/boringssl/include"/>
+					<Add directory="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/Makefile&quot;  VERBOSE=1 quic_client"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="quic_client/fast">
+				<Option output="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/libquic_client.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src"/>
+					<Add directory="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/test"/>
+					<Add directory="/home/sergei/Documents/git/lsquic-client/include"/>
+					<Add directory="/home/sergei/Documents/git/boringssl/include"/>
+					<Add directory="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/Makefile&quot;  VERBOSE=1 quic_client/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/include/args_data.h">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/include/quic_downloader.h">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/address_finder.c">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/address_finder.h">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/args_data.c">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/connection_establisher.c">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/connection_establisher.h">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/connection_init_handler.c">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/connection_init_handler.h">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/connection_params.c">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/connection_params.h">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/connection_read_handler.c">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/connection_read_handler.h">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/connection_write_handler.c">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/connection_write_handler.h">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/cycle_buffer.c">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/cycle_buffer.h">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/engine_structs.c">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/engine_structs.h">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/error_report.c">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/error_report.h">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/event_handlers.c">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/event_handlers.h">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/html_header_parser.c">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/html_header_parser.h">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/main.c">
+			<Option target="quic_probe"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/mono_parser.c">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/mono_parser.h">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/queue.c">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/queue.h">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/quic_downloader.c">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/quic_engine_holder.c">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/quic_engine_holder.h">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/simple_list.c">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/simple_list.h">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/socket_buffer.c">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/socket_buffer.h">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/socket_handler.c">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/socket_handler.h">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/stack.c">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/stack.h">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/text.c">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/text.h">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/timedifference.c">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/timedifference.h">
+			<Option target="quic_client"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

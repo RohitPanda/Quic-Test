@@ -1,0 +1,7 @@
+.idea/
+cmake-build-debug/
+*.txt
+libquic_client.a
+profile_test/
+
+!CMakeLists.txt

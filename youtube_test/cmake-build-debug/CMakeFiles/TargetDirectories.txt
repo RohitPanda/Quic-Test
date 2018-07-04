@@ -1,0 +1,3 @@
+/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/cmake-build-debug/CMakeFiles/youtube_test.dir

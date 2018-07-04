@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="youtube_test"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="youtube_test">
+				<Option output="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/cmake-build-debug/youtube_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/../build/ffmpeg-4.0/build/include"/>
+					<Add directory="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/src"/>
+					<Add directory="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/../build/boringssl/include"/>
+					<Add directory="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/../build/lsquic-client/include"/>
+					<Add directory="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/../quic_probe/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 youtube_test"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="youtube_test/fast">
+				<Option output="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/cmake-build-debug/youtube_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/../build/ffmpeg-4.0/build/include"/>
+					<Add directory="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/src"/>
+					<Add directory="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/../build/boringssl/include"/>
+					<Add directory="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/../build/lsquic-client/include"/>
+					<Add directory="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/../quic_probe/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 youtube_test/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/src/adaptive.c">
+			<Option target="youtube_test"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/src/adaptive.h">
+			<Option target="youtube_test"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/src/arguments_parser.c">
+			<Option target="youtube_test"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/src/arguments_parser.h">
+			<Option target="youtube_test"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/src/coro.c">
+			<Option target="youtube_test"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/src/coro.h">
+			<Option target="youtube_test"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/src/download_ops.c">
+			<Option target="youtube_test"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/src/download_ops.h">
+			<Option target="youtube_test"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/src/getinfo.c">
+			<Option target="youtube_test"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/src/getinfo.h">
+			<Option target="youtube_test"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/src/helper.c">
+			<Option target="youtube_test"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/src/helper.h">
+			<Option target="youtube_test"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/src/metrics.c">
+			<Option target="youtube_test"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/src/metrics.h">
+			<Option target="youtube_test"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/src/mm_parser.c">
+			<Option target="youtube_test"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/src/mm_parser.h">
+			<Option target="youtube_test"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/src/network_addresses.c">
+			<Option target="youtube_test"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/src/network_addresses.h">
+			<Option target="youtube_test"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/src/timespec_convertor.c">
+			<Option target="youtube_test"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/src/timespec_convertor.h">
+			<Option target="youtube_test"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/src/youtube-dl.c">
+			<Option target="youtube_test"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/src/youtube-dl.h">
+			<Option target="youtube_test"/>
+		</Unit>
+		<Unit filename="/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/youtube_test/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

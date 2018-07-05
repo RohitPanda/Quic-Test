@@ -12,7 +12,7 @@ include_directories(../build/lsquic-client/include src)
 include_directories(../quic_probe/include src)
 include_directories(/usr/local/include src)
 
-link_directories(../build/boringssl)
+link_directories(../build/boringssl/lib)
 link_directories(../build/lsquic-client/src/liblsquic)
 link_directories(../build/ffmpeg-4.0/build/lib)
 link_directories(../quic_probe)

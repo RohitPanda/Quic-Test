@@ -9,7 +9,7 @@ include_directories(../build/boringssl/include src)
 include_directories(../build/curl-7.58.0/build/include src)
 include_directories(../build/ffmpeg-4.0/build/include src)
 
-link_directories(../build/boringssl)
+link_directories(../build/boringssl/lib)
 link_directories(../build/curl-7.58.0/build/lib)
 link_directories(../build/ffmpeg-4.0/build/lib)
 

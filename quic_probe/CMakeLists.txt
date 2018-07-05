@@ -55,7 +55,7 @@ include_directories(../build/boringssl/include)
 include_directories(include)
 
 link_directories("../build/lsquic-client/src/liblsquic")
-link_directories("../build/boringssl")
+link_directories("../build/boringssl/lib")
 link_directories("/usr/local/lib")
 
 ##create a library

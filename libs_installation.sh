@@ -7,11 +7,13 @@ sudo rm -rf ./build
 mkdir build
 cd build
 
-PKG_OK=$(dpkg -s CMake|grep "install ok installed")
+PKG_OK=$(cmake --version|grep "cmake version")
 echo Checking for CMake: $PKG_OK
 if [ "" == "$PKG_OK" ]; then
   echo "No CMake. Setting up."
-  sudo apt-get --force-yes --yes install CMake
+  wget https://cmake.org/files/v3.10/cmake-3.10.3-Linux-x86_64.tar.gz
+  tar -xf cmake-3.10.3-Linux-x86_64.tar.gz
+  export PATH=$PWD/cmake-3.10.3-Linux-x86_64/bin:$PATH
 fi
 
 PKG_OK=$(ldconfig -p | grep libz.so$)
@@ -60,11 +62,17 @@ cmake -DBORINGSSL_INCLUDE=$BORINGSSL_SOURCE/include \
 make
 cd ..
 
-PKG_OK=$(dpkg -s yasm|grep "install ok installed")
+PKG_OK=$(yasm --version|grep "yasm 1.2.0")
 echo Checking for yasm: $PKG_OK
 if [ "" == "$PKG_OK" ]; then
   echo "No CMake. Setting up."
-  sudo apt-get --force-yes --yes install yasm
+  wget http://www.tortall.net/projects/yasm/releases/yasm-1.2.0.tar.gz
+  tar -xf yasm-1.2.0.tar.gz
+  cd yasm-1.2.0
+  ./configure
+  make
+  make install
+  cd ..
 fi
 
 CURL_VERSION=7.58.0
@@ -88,16 +96,16 @@ make install DESTDIR=$PWD/build/
 cd ..
 
 cd youtube_tcp_test
-cmake
+cmake .
 make
 cd ..
 
 cd quic_probe
-cmake
+cmake .
 make
 cd ..
 
 cd youtube_test
-cmake
+cmake .
 make
 cd..

@@ -1,6 +1,6 @@
 # YouTube test for QUIC library
 
-This work continues [Youtube test][YouTube-test]https://github.com/sabyahsan/Youtube-test. <br>
+This work continues [Youtube test][YouTube-test] <br>
 The goal of the thesis is testing QUIC performance for YouTube videos for IPv4 and IPv6.<br>
 
 The project consist of 3 projects: lsquic probe client, quic youtube test and modified tcp youtube test.

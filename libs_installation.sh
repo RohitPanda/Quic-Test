@@ -65,7 +65,7 @@ cd ..
 PKG_OK=$(yasm --version|grep "yasm 1.2.0")
 echo Checking for yasm: $PKG_OK
 if [ "" == "$PKG_OK" ]; then
-  echo "No CMake. Setting up."
+  echo "No yasm. Setting up."
   wget http://www.tortall.net/projects/yasm/releases/yasm-1.2.0.tar.gz
   tar -xf yasm-1.2.0.tar.gz
   cd yasm-1.2.0

@@ -6,7 +6,7 @@
 #define QUIC_PROBE_SOCKET_BUFFER_H
 
 #include <stddef.h>
-#include <bits/types/struct_iovec.h>
+#include <sys/uio.h>
 #include <bits/socket.h>
 
 struct buffered_socket_message

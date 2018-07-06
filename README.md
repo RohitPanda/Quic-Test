@@ -9,8 +9,15 @@ Tests were build on Ubuntu 18.04 LTS.
 ## Quickstart
 
 To install libraries, run bash ./libs_installation.sh.<br>
-It installs globally: zlib, libevent, yasm. Locally: boringssl, lsquic-client, curl, ffmpeg and compiles all libraries.<br>
-Installing script works only for Debian as it executes apt-get. For manual installation or script description refer to [Manual installation][Manual installation].
+Script requires installed build-essential tools, especially gcc and make. To download all distributives with wget, please set up all settings like proxy in advance. <br>
+QUIC YouTube test requires: lsquic, ffmpeg, libevent.<br>
+YouTube test (tcp_youtube_test) requires: ffmgep, curl, yasm, zlib.<br>
+
+For lsquic and curl boringssl is required.<br>
+Boringssl is built with go.<br>
+
+Script installs globally if no command is found: zlib, libevent, yasm. Other libraries are installed locally only.<br>
+Installing script was tested for Ubuntu 18.04 only. For manual installation or script description refer to [Manual installation][Manual installation].
 
 ## YouTube test (tcp_youtube_test)
 

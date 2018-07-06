@@ -11,16 +11,25 @@ PKG_OK=$(cmake --version|grep "cmake version")
 echo Checking for CMake: $PKG_OK
 if [ "" == "$PKG_OK" ]; then
   echo "No CMake. Setting up."
-  wget https://cmake.org/files/v3.10/cmake-3.10.3-Linux-x86_64.tar.gz
+  wget https://cmake.org/files/v3.10/cmake-3.10.3-Linux-x86_64.tar.gz|| exit -1
   tar -xf cmake-3.10.3-Linux-x86_64.tar.gz
   export PATH=$PWD/cmake-3.10.3-Linux-x86_64/bin:$PATH
+fi
+
+PKG_OK=$(go version|grep "go version go")
+echo Checking for CMake: $PKG_OK
+if [ "" == "$PKG_OK" ]; then
+  echo "No GO. Setting up."
+  wget https://dl.google.com/go/go1.10.3.linux-amd64.tar.gz|| exit -1
+  tar -xzf go1.10.3.linux-amd64.tar.gz 
+  export PATH=$PWD/go/bin:$PATH
 fi
 
 PKG_OK=$(ldconfig -p | grep libz.so$)
 echo Checking for Zlib: $PKG_OK
 if [ "" == "$PKG_OK" ]; then
   echo "No Zlib. Setting up."
-  wget http://zlib.net/zlib-1.2.11.tar.gz
+  wget http://zlib.net/zlib-1.2.11.tar.gz|| exit -1
   tar -xf zlib-1.2.11.tar.gz
   cd zlib-1.2.11/
   make distclean
@@ -47,7 +56,7 @@ PKG_OK=$(ldconfig -p | grep /lib/libevent)
 echo Checking for libevent: $PKG_OK
 if [ "" == "$PKG_OK" ]; then
   echo "No libevent. Setting up."
-  wget https://github.com/libevent/libevent/releases/download/release-2.1.8-stable/libevent-2.1.8-stable.tar.gz
+  wget https://github.com/libevent/libevent/releases/download/release-2.1.8-stable/libevent-2.1.8-stable.tar.gz|| exit -1
   tar -xf libevent-2.1.8-stable.tar.gz
   cd libevent-2.1.8-stable
   ./configure && make
@@ -62,11 +71,11 @@ cmake -DBORINGSSL_INCLUDE=$BORINGSSL_SOURCE/include \
 make
 cd ..
 
-PKG_OK=$(yasm --version|grep "yasm 1.2.0")
+PKG_OK=$(yasm --version|grep "yasm 1.")
 echo Checking for yasm: $PKG_OK
 if [ "" == "$PKG_OK" ]; then
   echo "No yasm. Setting up."
-  wget http://www.tortall.net/projects/yasm/releases/yasm-1.2.0.tar.gz
+  wget http://www.tortall.net/projects/yasm/releases/yasm-1.2.0.tar.gz|| exit -1
   tar -xf yasm-1.2.0.tar.gz
   cd yasm-1.2.0
   ./configure
@@ -77,7 +86,7 @@ fi
 
 CURL_VERSION=7.58.0
 
-wget "https://curl.haxx.se/download/curl-${CURL_VERSION}.tar.gz"
+wget "https://curl.haxx.se/download/curl-${CURL_VERSION}.tar.gz"|| exit -1
 sudo tar -xf curl-${CURL_VERSION}.tar.gz
 cd curl-${CURL_VERSION}
 mkdir -p build
@@ -87,7 +96,7 @@ cd ..
 
 FFMPEG_VERSION=4.0
 
-wget "http://ffmpeg.org/releases/ffmpeg-${FFMPEG_VERSION}.tar.gz"
+wget "http://ffmpeg.org/releases/ffmpeg-${FFMPEG_VERSION}.tar.gz"|| exit -1
 sudo tar -xf ffmpeg-${FFMPEG_VERSION}.tar.gz
 cd ffmpeg-${FFMPEG_VERSION}
 mkdir -p build
@@ -108,4 +117,4 @@ cd ..
 cd youtube_test
 cmake .
 make
-cd..
+cd ..

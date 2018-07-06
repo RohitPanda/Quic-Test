@@ -4,6 +4,6 @@ cmake-build-debug/
 libquic_client.a
 profile_test/
 CMakeFiles
-*.make
+*.cmake
 
 !CMakeLists.txt

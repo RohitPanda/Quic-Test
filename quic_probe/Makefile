@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/sergei/Documents/apps/clion-2018.1.2/bin/cmake/bin/cmake
+CMAKE_COMMAND = /usr/bin/cmake
 
 # The command to remove a file.
-RM = /home/sergei/Documents/apps/clion-2018.1.2/bin/cmake/bin/cmake -E remove -f
+RM = /usr/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe
+CMAKE_SOURCE_DIR = /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe
+CMAKE_BINARY_DIR = /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/sergei/Documents/apps/clion-2018.1.2/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/sergei/Documents/apps/clion-2018.1.2/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/CMakeFiles /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/CMakeFiles /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,19 +111,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named quic_probe
-
-# Build rule for target.
-quic_probe: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 quic_probe
-.PHONY : quic_probe
-
-# fast build rule for target.
-quic_probe/fast:
-	$(MAKE) -f CMakeFiles/quic_probe.dir/build.make CMakeFiles/quic_probe.dir/build
-.PHONY : quic_probe/fast
-
-#=============================================================================
 # Target rules for targets named quic_client
 
 # Build rule for target.
@@ -135,6 +122,19 @@ quic_client: cmake_check_build_system
 quic_client/fast:
 	$(MAKE) -f CMakeFiles/quic_client.dir/build.make CMakeFiles/quic_client.dir/build
 .PHONY : quic_client/fast
+
+#=============================================================================
+# Target rules for targets named quic_probe
+
+# Build rule for target.
+quic_probe: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 quic_probe
+.PHONY : quic_probe
+
+# fast build rule for target.
+quic_probe/fast:
+	$(MAKE) -f CMakeFiles/quic_probe.dir/build.make CMakeFiles/quic_probe.dir/build
+.PHONY : quic_probe/fast
 
 src/address_finder.o: src/address_finder.c.o
 
@@ -764,9 +764,9 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... quic_probe"
 	@echo "... edit_cache"
 	@echo "... quic_client"
+	@echo "... quic_probe"
 	@echo "... src/address_finder.o"
 	@echo "... src/address_finder.i"
 	@echo "... src/address_finder.s"

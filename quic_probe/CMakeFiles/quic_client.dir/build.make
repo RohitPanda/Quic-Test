@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/sergei/Documents/apps/clion-2018.1.2/bin/cmake/bin/cmake
+CMAKE_COMMAND = /usr/bin/cmake
 
 # The command to remove a file.
-RM = /home/sergei/Documents/apps/clion-2018.1.2/bin/cmake/bin/cmake -E remove -f
+RM = /usr/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe
+CMAKE_SOURCE_DIR = /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe
+CMAKE_BINARY_DIR = /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe
 
 # Include any dependencies generated for this target.
 include CMakeFiles/quic_client.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/quic_client.dir/flags.make
 
 CMakeFiles/quic_client.dir/src/address_finder.c.o: CMakeFiles/quic_client.dir/flags.make
 CMakeFiles/quic_client.dir/src/address_finder.c.o: src/address_finder.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/quic_client.dir/src/address_finder.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/address_finder.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/address_finder.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/quic_client.dir/src/address_finder.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/address_finder.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/address_finder.c
 
 CMakeFiles/quic_client.dir/src/address_finder.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/quic_client.dir/src/address_finder.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/address_finder.c > CMakeFiles/quic_client.dir/src/address_finder.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/address_finder.c > CMakeFiles/quic_client.dir/src/address_finder.c.i
 
 CMakeFiles/quic_client.dir/src/address_finder.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/quic_client.dir/src/address_finder.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/address_finder.c -o CMakeFiles/quic_client.dir/src/address_finder.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/address_finder.c -o CMakeFiles/quic_client.dir/src/address_finder.c.s
 
 CMakeFiles/quic_client.dir/src/address_finder.c.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/quic_client.dir/src/address_finder.c.o.provides.build: CMakeFiles/qui
 
 CMakeFiles/quic_client.dir/src/connection_establisher.c.o: CMakeFiles/quic_client.dir/flags.make
 CMakeFiles/quic_client.dir/src/connection_establisher.c.o: src/connection_establisher.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/quic_client.dir/src/connection_establisher.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/connection_establisher.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/connection_establisher.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/quic_client.dir/src/connection_establisher.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/connection_establisher.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/connection_establisher.c
 
 CMakeFiles/quic_client.dir/src/connection_establisher.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/quic_client.dir/src/connection_establisher.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/connection_establisher.c > CMakeFiles/quic_client.dir/src/connection_establisher.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/connection_establisher.c > CMakeFiles/quic_client.dir/src/connection_establisher.c.i
 
 CMakeFiles/quic_client.dir/src/connection_establisher.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/quic_client.dir/src/connection_establisher.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/connection_establisher.c -o CMakeFiles/quic_client.dir/src/connection_establisher.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/connection_establisher.c -o CMakeFiles/quic_client.dir/src/connection_establisher.c.s
 
 CMakeFiles/quic_client.dir/src/connection_establisher.c.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/quic_client.dir/src/connection_establisher.c.o.provides.build: CMakeF
 
 CMakeFiles/quic_client.dir/src/connection_init_handler.c.o: CMakeFiles/quic_client.dir/flags.make
 CMakeFiles/quic_client.dir/src/connection_init_handler.c.o: src/connection_init_handler.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/quic_client.dir/src/connection_init_handler.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/connection_init_handler.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/connection_init_handler.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/quic_client.dir/src/connection_init_handler.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/connection_init_handler.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/connection_init_handler.c
 
 CMakeFiles/quic_client.dir/src/connection_init_handler.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/quic_client.dir/src/connection_init_handler.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/connection_init_handler.c > CMakeFiles/quic_client.dir/src/connection_init_handler.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/connection_init_handler.c > CMakeFiles/quic_client.dir/src/connection_init_handler.c.i
 
 CMakeFiles/quic_client.dir/src/connection_init_handler.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/quic_client.dir/src/connection_init_handler.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/connection_init_handler.c -o CMakeFiles/quic_client.dir/src/connection_init_handler.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/connection_init_handler.c -o CMakeFiles/quic_client.dir/src/connection_init_handler.c.s
 
 CMakeFiles/quic_client.dir/src/connection_init_handler.c.o.requires:
 
@@ -131,16 +131,16 @@ CMakeFiles/quic_client.dir/src/connection_init_handler.c.o.provides.build: CMake
 
 CMakeFiles/quic_client.dir/src/connection_read_handler.c.o: CMakeFiles/quic_client.dir/flags.make
 CMakeFiles/quic_client.dir/src/connection_read_handler.c.o: src/connection_read_handler.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/quic_client.dir/src/connection_read_handler.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/connection_read_handler.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/connection_read_handler.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/quic_client.dir/src/connection_read_handler.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/connection_read_handler.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/connection_read_handler.c
 
 CMakeFiles/quic_client.dir/src/connection_read_handler.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/quic_client.dir/src/connection_read_handler.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/connection_read_handler.c > CMakeFiles/quic_client.dir/src/connection_read_handler.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/connection_read_handler.c > CMakeFiles/quic_client.dir/src/connection_read_handler.c.i
 
 CMakeFiles/quic_client.dir/src/connection_read_handler.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/quic_client.dir/src/connection_read_handler.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/connection_read_handler.c -o CMakeFiles/quic_client.dir/src/connection_read_handler.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/connection_read_handler.c -o CMakeFiles/quic_client.dir/src/connection_read_handler.c.s
 
 CMakeFiles/quic_client.dir/src/connection_read_handler.c.o.requires:
 
@@ -155,16 +155,16 @@ CMakeFiles/quic_client.dir/src/connection_read_handler.c.o.provides.build: CMake
 
 CMakeFiles/quic_client.dir/src/connection_write_handler.c.o: CMakeFiles/quic_client.dir/flags.make
 CMakeFiles/quic_client.dir/src/connection_write_handler.c.o: src/connection_write_handler.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/quic_client.dir/src/connection_write_handler.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/connection_write_handler.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/connection_write_handler.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/quic_client.dir/src/connection_write_handler.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/connection_write_handler.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/connection_write_handler.c
 
 CMakeFiles/quic_client.dir/src/connection_write_handler.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/quic_client.dir/src/connection_write_handler.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/connection_write_handler.c > CMakeFiles/quic_client.dir/src/connection_write_handler.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/connection_write_handler.c > CMakeFiles/quic_client.dir/src/connection_write_handler.c.i
 
 CMakeFiles/quic_client.dir/src/connection_write_handler.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/quic_client.dir/src/connection_write_handler.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/connection_write_handler.c -o CMakeFiles/quic_client.dir/src/connection_write_handler.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/connection_write_handler.c -o CMakeFiles/quic_client.dir/src/connection_write_handler.c.s
 
 CMakeFiles/quic_client.dir/src/connection_write_handler.c.o.requires:
 
@@ -179,16 +179,16 @@ CMakeFiles/quic_client.dir/src/connection_write_handler.c.o.provides.build: CMak
 
 CMakeFiles/quic_client.dir/src/engine_structs.c.o: CMakeFiles/quic_client.dir/flags.make
 CMakeFiles/quic_client.dir/src/engine_structs.c.o: src/engine_structs.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/quic_client.dir/src/engine_structs.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/engine_structs.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/engine_structs.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/quic_client.dir/src/engine_structs.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/engine_structs.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/engine_structs.c
 
 CMakeFiles/quic_client.dir/src/engine_structs.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/quic_client.dir/src/engine_structs.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/engine_structs.c > CMakeFiles/quic_client.dir/src/engine_structs.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/engine_structs.c > CMakeFiles/quic_client.dir/src/engine_structs.c.i
 
 CMakeFiles/quic_client.dir/src/engine_structs.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/quic_client.dir/src/engine_structs.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/engine_structs.c -o CMakeFiles/quic_client.dir/src/engine_structs.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/engine_structs.c -o CMakeFiles/quic_client.dir/src/engine_structs.c.s
 
 CMakeFiles/quic_client.dir/src/engine_structs.c.o.requires:
 
@@ -203,16 +203,16 @@ CMakeFiles/quic_client.dir/src/engine_structs.c.o.provides.build: CMakeFiles/qui
 
 CMakeFiles/quic_client.dir/src/quic_engine_holder.c.o: CMakeFiles/quic_client.dir/flags.make
 CMakeFiles/quic_client.dir/src/quic_engine_holder.c.o: src/quic_engine_holder.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/quic_client.dir/src/quic_engine_holder.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/quic_engine_holder.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/quic_engine_holder.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/quic_client.dir/src/quic_engine_holder.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/quic_engine_holder.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/quic_engine_holder.c
 
 CMakeFiles/quic_client.dir/src/quic_engine_holder.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/quic_client.dir/src/quic_engine_holder.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/quic_engine_holder.c > CMakeFiles/quic_client.dir/src/quic_engine_holder.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/quic_engine_holder.c > CMakeFiles/quic_client.dir/src/quic_engine_holder.c.i
 
 CMakeFiles/quic_client.dir/src/quic_engine_holder.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/quic_client.dir/src/quic_engine_holder.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/quic_engine_holder.c -o CMakeFiles/quic_client.dir/src/quic_engine_holder.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/quic_engine_holder.c -o CMakeFiles/quic_client.dir/src/quic_engine_holder.c.s
 
 CMakeFiles/quic_client.dir/src/quic_engine_holder.c.o.requires:
 
@@ -227,16 +227,16 @@ CMakeFiles/quic_client.dir/src/quic_engine_holder.c.o.provides.build: CMakeFiles
 
 CMakeFiles/quic_client.dir/src/socket_handler.c.o: CMakeFiles/quic_client.dir/flags.make
 CMakeFiles/quic_client.dir/src/socket_handler.c.o: src/socket_handler.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/quic_client.dir/src/socket_handler.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/socket_handler.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/socket_handler.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/quic_client.dir/src/socket_handler.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/socket_handler.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/socket_handler.c
 
 CMakeFiles/quic_client.dir/src/socket_handler.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/quic_client.dir/src/socket_handler.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/socket_handler.c > CMakeFiles/quic_client.dir/src/socket_handler.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/socket_handler.c > CMakeFiles/quic_client.dir/src/socket_handler.c.i
 
 CMakeFiles/quic_client.dir/src/socket_handler.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/quic_client.dir/src/socket_handler.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/socket_handler.c -o CMakeFiles/quic_client.dir/src/socket_handler.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/socket_handler.c -o CMakeFiles/quic_client.dir/src/socket_handler.c.s
 
 CMakeFiles/quic_client.dir/src/socket_handler.c.o.requires:
 
@@ -251,16 +251,16 @@ CMakeFiles/quic_client.dir/src/socket_handler.c.o.provides.build: CMakeFiles/qui
 
 CMakeFiles/quic_client.dir/src/connection_params.c.o: CMakeFiles/quic_client.dir/flags.make
 CMakeFiles/quic_client.dir/src/connection_params.c.o: src/connection_params.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/quic_client.dir/src/connection_params.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/connection_params.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/connection_params.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/quic_client.dir/src/connection_params.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/connection_params.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/connection_params.c
 
 CMakeFiles/quic_client.dir/src/connection_params.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/quic_client.dir/src/connection_params.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/connection_params.c > CMakeFiles/quic_client.dir/src/connection_params.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/connection_params.c > CMakeFiles/quic_client.dir/src/connection_params.c.i
 
 CMakeFiles/quic_client.dir/src/connection_params.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/quic_client.dir/src/connection_params.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/connection_params.c -o CMakeFiles/quic_client.dir/src/connection_params.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/connection_params.c -o CMakeFiles/quic_client.dir/src/connection_params.c.s
 
 CMakeFiles/quic_client.dir/src/connection_params.c.o.requires:
 
@@ -275,16 +275,16 @@ CMakeFiles/quic_client.dir/src/connection_params.c.o.provides.build: CMakeFiles/
 
 CMakeFiles/quic_client.dir/src/socket_buffer.c.o: CMakeFiles/quic_client.dir/flags.make
 CMakeFiles/quic_client.dir/src/socket_buffer.c.o: src/socket_buffer.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/quic_client.dir/src/socket_buffer.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/socket_buffer.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/socket_buffer.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/quic_client.dir/src/socket_buffer.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/socket_buffer.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/socket_buffer.c
 
 CMakeFiles/quic_client.dir/src/socket_buffer.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/quic_client.dir/src/socket_buffer.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/socket_buffer.c > CMakeFiles/quic_client.dir/src/socket_buffer.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/socket_buffer.c > CMakeFiles/quic_client.dir/src/socket_buffer.c.i
 
 CMakeFiles/quic_client.dir/src/socket_buffer.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/quic_client.dir/src/socket_buffer.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/socket_buffer.c -o CMakeFiles/quic_client.dir/src/socket_buffer.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/socket_buffer.c -o CMakeFiles/quic_client.dir/src/socket_buffer.c.s
 
 CMakeFiles/quic_client.dir/src/socket_buffer.c.o.requires:
 
@@ -299,16 +299,16 @@ CMakeFiles/quic_client.dir/src/socket_buffer.c.o.provides.build: CMakeFiles/quic
 
 CMakeFiles/quic_client.dir/src/quic_downloader.c.o: CMakeFiles/quic_client.dir/flags.make
 CMakeFiles/quic_client.dir/src/quic_downloader.c.o: src/quic_downloader.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/quic_client.dir/src/quic_downloader.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/quic_downloader.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/quic_downloader.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/quic_client.dir/src/quic_downloader.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/quic_downloader.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/quic_downloader.c
 
 CMakeFiles/quic_client.dir/src/quic_downloader.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/quic_client.dir/src/quic_downloader.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/quic_downloader.c > CMakeFiles/quic_client.dir/src/quic_downloader.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/quic_downloader.c > CMakeFiles/quic_client.dir/src/quic_downloader.c.i
 
 CMakeFiles/quic_client.dir/src/quic_downloader.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/quic_client.dir/src/quic_downloader.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/quic_downloader.c -o CMakeFiles/quic_client.dir/src/quic_downloader.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/quic_downloader.c -o CMakeFiles/quic_client.dir/src/quic_downloader.c.s
 
 CMakeFiles/quic_client.dir/src/quic_downloader.c.o.requires:
 
@@ -323,16 +323,16 @@ CMakeFiles/quic_client.dir/src/quic_downloader.c.o.provides.build: CMakeFiles/qu
 
 CMakeFiles/quic_client.dir/src/stack.c.o: CMakeFiles/quic_client.dir/flags.make
 CMakeFiles/quic_client.dir/src/stack.c.o: src/stack.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/quic_client.dir/src/stack.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/stack.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/stack.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/quic_client.dir/src/stack.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/stack.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/stack.c
 
 CMakeFiles/quic_client.dir/src/stack.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/quic_client.dir/src/stack.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/stack.c > CMakeFiles/quic_client.dir/src/stack.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/stack.c > CMakeFiles/quic_client.dir/src/stack.c.i
 
 CMakeFiles/quic_client.dir/src/stack.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/quic_client.dir/src/stack.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/stack.c -o CMakeFiles/quic_client.dir/src/stack.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/stack.c -o CMakeFiles/quic_client.dir/src/stack.c.s
 
 CMakeFiles/quic_client.dir/src/stack.c.o.requires:
 
@@ -347,16 +347,16 @@ CMakeFiles/quic_client.dir/src/stack.c.o.provides.build: CMakeFiles/quic_client.
 
 CMakeFiles/quic_client.dir/src/cycle_buffer.c.o: CMakeFiles/quic_client.dir/flags.make
 CMakeFiles/quic_client.dir/src/cycle_buffer.c.o: src/cycle_buffer.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/quic_client.dir/src/cycle_buffer.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/cycle_buffer.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/cycle_buffer.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/quic_client.dir/src/cycle_buffer.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/cycle_buffer.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/cycle_buffer.c
 
 CMakeFiles/quic_client.dir/src/cycle_buffer.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/quic_client.dir/src/cycle_buffer.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/cycle_buffer.c > CMakeFiles/quic_client.dir/src/cycle_buffer.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/cycle_buffer.c > CMakeFiles/quic_client.dir/src/cycle_buffer.c.i
 
 CMakeFiles/quic_client.dir/src/cycle_buffer.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/quic_client.dir/src/cycle_buffer.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/cycle_buffer.c -o CMakeFiles/quic_client.dir/src/cycle_buffer.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/cycle_buffer.c -o CMakeFiles/quic_client.dir/src/cycle_buffer.c.s
 
 CMakeFiles/quic_client.dir/src/cycle_buffer.c.o.requires:
 
@@ -371,16 +371,16 @@ CMakeFiles/quic_client.dir/src/cycle_buffer.c.o.provides.build: CMakeFiles/quic_
 
 CMakeFiles/quic_client.dir/src/simple_list.c.o: CMakeFiles/quic_client.dir/flags.make
 CMakeFiles/quic_client.dir/src/simple_list.c.o: src/simple_list.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/quic_client.dir/src/simple_list.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/simple_list.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/simple_list.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/quic_client.dir/src/simple_list.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/simple_list.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/simple_list.c
 
 CMakeFiles/quic_client.dir/src/simple_list.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/quic_client.dir/src/simple_list.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/simple_list.c > CMakeFiles/quic_client.dir/src/simple_list.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/simple_list.c > CMakeFiles/quic_client.dir/src/simple_list.c.i
 
 CMakeFiles/quic_client.dir/src/simple_list.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/quic_client.dir/src/simple_list.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/simple_list.c -o CMakeFiles/quic_client.dir/src/simple_list.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/simple_list.c -o CMakeFiles/quic_client.dir/src/simple_list.c.s
 
 CMakeFiles/quic_client.dir/src/simple_list.c.o.requires:
 
@@ -395,16 +395,16 @@ CMakeFiles/quic_client.dir/src/simple_list.c.o.provides.build: CMakeFiles/quic_c
 
 CMakeFiles/quic_client.dir/src/event_handlers.c.o: CMakeFiles/quic_client.dir/flags.make
 CMakeFiles/quic_client.dir/src/event_handlers.c.o: src/event_handlers.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/quic_client.dir/src/event_handlers.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/event_handlers.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/event_handlers.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/quic_client.dir/src/event_handlers.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/event_handlers.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/event_handlers.c
 
 CMakeFiles/quic_client.dir/src/event_handlers.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/quic_client.dir/src/event_handlers.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/event_handlers.c > CMakeFiles/quic_client.dir/src/event_handlers.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/event_handlers.c > CMakeFiles/quic_client.dir/src/event_handlers.c.i
 
 CMakeFiles/quic_client.dir/src/event_handlers.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/quic_client.dir/src/event_handlers.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/event_handlers.c -o CMakeFiles/quic_client.dir/src/event_handlers.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/event_handlers.c -o CMakeFiles/quic_client.dir/src/event_handlers.c.s
 
 CMakeFiles/quic_client.dir/src/event_handlers.c.o.requires:
 
@@ -419,16 +419,16 @@ CMakeFiles/quic_client.dir/src/event_handlers.c.o.provides.build: CMakeFiles/qui
 
 CMakeFiles/quic_client.dir/src/error_report.c.o: CMakeFiles/quic_client.dir/flags.make
 CMakeFiles/quic_client.dir/src/error_report.c.o: src/error_report.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/quic_client.dir/src/error_report.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/error_report.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/error_report.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/quic_client.dir/src/error_report.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/error_report.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/error_report.c
 
 CMakeFiles/quic_client.dir/src/error_report.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/quic_client.dir/src/error_report.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/error_report.c > CMakeFiles/quic_client.dir/src/error_report.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/error_report.c > CMakeFiles/quic_client.dir/src/error_report.c.i
 
 CMakeFiles/quic_client.dir/src/error_report.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/quic_client.dir/src/error_report.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/error_report.c -o CMakeFiles/quic_client.dir/src/error_report.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/error_report.c -o CMakeFiles/quic_client.dir/src/error_report.c.s
 
 CMakeFiles/quic_client.dir/src/error_report.c.o.requires:
 
@@ -443,16 +443,16 @@ CMakeFiles/quic_client.dir/src/error_report.c.o.provides.build: CMakeFiles/quic_
 
 CMakeFiles/quic_client.dir/src/text.c.o: CMakeFiles/quic_client.dir/flags.make
 CMakeFiles/quic_client.dir/src/text.c.o: src/text.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/quic_client.dir/src/text.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/text.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/text.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/quic_client.dir/src/text.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/text.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/text.c
 
 CMakeFiles/quic_client.dir/src/text.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/quic_client.dir/src/text.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/text.c > CMakeFiles/quic_client.dir/src/text.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/text.c > CMakeFiles/quic_client.dir/src/text.c.i
 
 CMakeFiles/quic_client.dir/src/text.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/quic_client.dir/src/text.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/text.c -o CMakeFiles/quic_client.dir/src/text.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/text.c -o CMakeFiles/quic_client.dir/src/text.c.s
 
 CMakeFiles/quic_client.dir/src/text.c.o.requires:
 
@@ -467,16 +467,16 @@ CMakeFiles/quic_client.dir/src/text.c.o.provides.build: CMakeFiles/quic_client.d
 
 CMakeFiles/quic_client.dir/src/args_data.c.o: CMakeFiles/quic_client.dir/flags.make
 CMakeFiles/quic_client.dir/src/args_data.c.o: src/args_data.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/quic_client.dir/src/args_data.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/args_data.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/args_data.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/quic_client.dir/src/args_data.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/args_data.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/args_data.c
 
 CMakeFiles/quic_client.dir/src/args_data.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/quic_client.dir/src/args_data.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/args_data.c > CMakeFiles/quic_client.dir/src/args_data.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/args_data.c > CMakeFiles/quic_client.dir/src/args_data.c.i
 
 CMakeFiles/quic_client.dir/src/args_data.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/quic_client.dir/src/args_data.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/args_data.c -o CMakeFiles/quic_client.dir/src/args_data.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/args_data.c -o CMakeFiles/quic_client.dir/src/args_data.c.s
 
 CMakeFiles/quic_client.dir/src/args_data.c.o.requires:
 
@@ -491,16 +491,16 @@ CMakeFiles/quic_client.dir/src/args_data.c.o.provides.build: CMakeFiles/quic_cli
 
 CMakeFiles/quic_client.dir/src/html_header_parser.c.o: CMakeFiles/quic_client.dir/flags.make
 CMakeFiles/quic_client.dir/src/html_header_parser.c.o: src/html_header_parser.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/quic_client.dir/src/html_header_parser.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/html_header_parser.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/html_header_parser.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/quic_client.dir/src/html_header_parser.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/html_header_parser.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/html_header_parser.c
 
 CMakeFiles/quic_client.dir/src/html_header_parser.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/quic_client.dir/src/html_header_parser.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/html_header_parser.c > CMakeFiles/quic_client.dir/src/html_header_parser.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/html_header_parser.c > CMakeFiles/quic_client.dir/src/html_header_parser.c.i
 
 CMakeFiles/quic_client.dir/src/html_header_parser.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/quic_client.dir/src/html_header_parser.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/html_header_parser.c -o CMakeFiles/quic_client.dir/src/html_header_parser.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/html_header_parser.c -o CMakeFiles/quic_client.dir/src/html_header_parser.c.s
 
 CMakeFiles/quic_client.dir/src/html_header_parser.c.o.requires:
 
@@ -515,16 +515,16 @@ CMakeFiles/quic_client.dir/src/html_header_parser.c.o.provides.build: CMakeFiles
 
 CMakeFiles/quic_client.dir/src/mono_parser.c.o: CMakeFiles/quic_client.dir/flags.make
 CMakeFiles/quic_client.dir/src/mono_parser.c.o: src/mono_parser.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/quic_client.dir/src/mono_parser.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/mono_parser.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/mono_parser.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/quic_client.dir/src/mono_parser.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/mono_parser.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/mono_parser.c
 
 CMakeFiles/quic_client.dir/src/mono_parser.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/quic_client.dir/src/mono_parser.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/mono_parser.c > CMakeFiles/quic_client.dir/src/mono_parser.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/mono_parser.c > CMakeFiles/quic_client.dir/src/mono_parser.c.i
 
 CMakeFiles/quic_client.dir/src/mono_parser.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/quic_client.dir/src/mono_parser.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/mono_parser.c -o CMakeFiles/quic_client.dir/src/mono_parser.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/mono_parser.c -o CMakeFiles/quic_client.dir/src/mono_parser.c.s
 
 CMakeFiles/quic_client.dir/src/mono_parser.c.o.requires:
 
@@ -539,16 +539,16 @@ CMakeFiles/quic_client.dir/src/mono_parser.c.o.provides.build: CMakeFiles/quic_c
 
 CMakeFiles/quic_client.dir/src/timedifference.c.o: CMakeFiles/quic_client.dir/flags.make
 CMakeFiles/quic_client.dir/src/timedifference.c.o: src/timedifference.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/quic_client.dir/src/timedifference.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/timedifference.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/timedifference.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/quic_client.dir/src/timedifference.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/timedifference.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/timedifference.c
 
 CMakeFiles/quic_client.dir/src/timedifference.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/quic_client.dir/src/timedifference.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/timedifference.c > CMakeFiles/quic_client.dir/src/timedifference.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/timedifference.c > CMakeFiles/quic_client.dir/src/timedifference.c.i
 
 CMakeFiles/quic_client.dir/src/timedifference.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/quic_client.dir/src/timedifference.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/timedifference.c -o CMakeFiles/quic_client.dir/src/timedifference.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/timedifference.c -o CMakeFiles/quic_client.dir/src/timedifference.c.s
 
 CMakeFiles/quic_client.dir/src/timedifference.c.o.requires:
 
@@ -563,16 +563,16 @@ CMakeFiles/quic_client.dir/src/timedifference.c.o.provides.build: CMakeFiles/qui
 
 CMakeFiles/quic_client.dir/src/queue.c.o: CMakeFiles/quic_client.dir/flags.make
 CMakeFiles/quic_client.dir/src/queue.c.o: src/queue.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/quic_client.dir/src/queue.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/queue.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/queue.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/quic_client.dir/src/queue.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/quic_client.dir/src/queue.c.o   -c /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/queue.c
 
 CMakeFiles/quic_client.dir/src/queue.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/quic_client.dir/src/queue.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/queue.c > CMakeFiles/quic_client.dir/src/queue.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/queue.c > CMakeFiles/quic_client.dir/src/queue.c.i
 
 CMakeFiles/quic_client.dir/src/queue.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/quic_client.dir/src/queue.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/queue.c -o CMakeFiles/quic_client.dir/src/queue.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/queue.c -o CMakeFiles/quic_client.dir/src/queue.c.s
 
 CMakeFiles/quic_client.dir/src/queue.c.o.requires:
 
@@ -637,7 +637,7 @@ libquic_client.a: CMakeFiles/quic_client.dir/src/timedifference.c.o
 libquic_client.a: CMakeFiles/quic_client.dir/src/queue.c.o
 libquic_client.a: CMakeFiles/quic_client.dir/build.make
 libquic_client.a: CMakeFiles/quic_client.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Linking C static library libquic_client.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Linking C static library libquic_client.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/quic_client.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/quic_client.dir/link.txt --verbose=$(VERBOSE)
 
@@ -676,6 +676,6 @@ CMakeFiles/quic_client.dir/clean:
 .PHONY : CMakeFiles/quic_client.dir/clean
 
 CMakeFiles/quic_client.dir/depend:
-	cd /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe /home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/CMakeFiles/quic_client.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe /home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/CMakeFiles/quic_client.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/quic_client.dir/depend
 

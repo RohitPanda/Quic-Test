@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/include/args_data.h
+/home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/include/args_data.h
 stdio.h
 -
 stddef.h
@@ -14,13 +14,13 @@ stddef.h
 sys/types.h
 -
 
-/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/include/quic_downloader.h
+/home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/include/quic_downloader.h
 stdio.h
 -
 args_data.h
-/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/include/args_data.h
+/home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/include/args_data.h
 
-/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/src/main.c
+/home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/src/main.c
 stdio.h
 -
 string.h
@@ -34,5 +34,5 @@ unistd.h
 limits.h
 -
 ../include/quic_downloader.h
-/home/sergei/Documents/git/2018-sergey-masters-thesis/eclipse/quic_probe/include/quic_downloader.h
+/home/sergei/Documents/git/2018-sergey-masters-code/quic_probe/include/quic_downloader.h
 

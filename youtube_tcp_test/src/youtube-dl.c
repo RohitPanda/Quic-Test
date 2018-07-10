@@ -65,6 +65,11 @@ static void mainexit()
 
 static int init_libraries() {
 	CURLcode ret = curl_global_init(CURL_GLOBAL_ALL);
+
+	// silence ffmpeg if it's not required
+    if (!program_arguments.instantaneous_output)
+        av_log_set_level(AV_LOG_QUIET);
+
 	if(ret != CURLE_OK) {
 		return -1;
 	}

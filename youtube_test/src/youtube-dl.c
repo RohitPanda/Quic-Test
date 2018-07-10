@@ -104,6 +104,9 @@ static int init_quic_client()
 }
 
 static int init_libraries() {
+    if (!program_arguments.instantaneous_output)
+        av_log_set_level(AV_LOG_QUIET);
+
     if (init_quic_client() == -1)
         return -1;
 

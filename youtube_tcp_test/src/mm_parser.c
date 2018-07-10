@@ -71,6 +71,7 @@ void mm_parser(void *arg) {
 	if (fmt_ctx == NULL) {
 		exit(EXIT_FAILURE);
 	}
+	fmt_ctx->url = "video file";
 	fmt_ctx->pb = avio;
 	int ret = avformat_open_input(&fmt_ctx, NULL, NULL, NULL);
 	if (ret < 0) {

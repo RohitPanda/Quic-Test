@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/download_ops.c" line="429" mnemonic="D" />
-    <bookmark url="file://$PROJECT_DIR$/src/download_ops.c" line="288" mnemonic="L" />
+    <bookmark url="file://$PROJECT_DIR$/src/download_ops.c" line="431" mnemonic="D" />
+    <bookmark url="file://$PROJECT_DIR$/src/download_ops.c" line="290" mnemonic="L" />
     <bookmark url="file://$PROJECT_DIR$/src/download_ops.c" line="120" mnemonic="O" />
     <bookmark url="file://$PROJECT_DIR$/src/youtube-dl.c" line="81" mnemonic="I" />
   </component>
@@ -17,132 +17,13 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec010067-8149-486c-84d1-3e54f6e3c22e" name="Default" comment="Moved to shared libs support">
-      <change beforePath="$PROJECT_DIR$/../quic_probe/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../quic_probe/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/3.10.2/CMakeCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/3.10.2/CMakeCXXCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/3.10.2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/3.10.2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/3.10.2/CMakeSystem.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/3.10.2/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/3.10.2/CompilerIdC/a.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/3.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/3.10.2/CompilerIdCXX/a.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/3.10.3/CMakeCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/3.10.3/CMakeCXXCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/3.10.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/3.10.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/3.10.3/CMakeSystem.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/3.10.3/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/3.10.3/CompilerIdC/a.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/3.10.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/3.10.3/CompilerIdCXX/a.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/CMakeOutput.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/Makefile2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/cmake.check_cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/feature_tests.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/feature_tests.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/feature_tests.cxx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/progress.marks" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/quic_client.dir/C.includecache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/quic_client.dir/DependInfo.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/quic_client.dir/build.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/quic_client.dir/cmake_clean.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/quic_client.dir/cmake_clean_target.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/quic_client.dir/depend.internal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/quic_client.dir/depend.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/quic_client.dir/flags.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/quic_client.dir/progress.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/quic_client.dir/src/address_finder.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/quic_client.dir/src/args_data.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/quic_client.dir/src/connection_establisher.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/quic_client.dir/src/connection_init_handler.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/quic_client.dir/src/connection_params.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/quic_client.dir/src/connection_read_handler.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/quic_client.dir/src/connection_write_handler.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/quic_client.dir/src/cycle_buffer.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/quic_client.dir/src/engine_structs.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/quic_client.dir/src/error_report.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/quic_client.dir/src/event_handlers.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/quic_client.dir/src/html_header_parser.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/quic_client.dir/src/mono_parser.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/quic_client.dir/src/queue.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/quic_client.dir/src/quic_downloader.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/quic_client.dir/src/quic_engine_holder.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/quic_client.dir/src/simple_list.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/quic_client.dir/src/socket_buffer.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/quic_client.dir/src/socket_handler.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/quic_client.dir/src/stack.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/quic_client.dir/src/text.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/quic_client.dir/src/timedifference.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/quic_probe.dir/C.includecache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/quic_probe.dir/DependInfo.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/quic_probe.dir/build.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/quic_probe.dir/cmake_clean.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/quic_probe.dir/depend.internal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/quic_probe.dir/depend.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/quic_probe.dir/flags.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/quic_probe.dir/progress.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/CMakeFiles/quic_probe.dir/src/main.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/MakefileOld" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/cmake_install.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/quic_probe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quic_probe/quic_probe.cbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="ec010067-8149-486c-84d1-3e54f6e3c22e" name="Default" comment="Fix luck of ffmpeg protocols">
+      <change beforePath="$PROJECT_DIR$/../youtube_tcp_test/src/mm_parser.c" beforeDir="false" afterPath="$PROJECT_DIR$/../youtube_tcp_test/src/mm_parser.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../youtube_tcp_test/src/youtube-dl.c" beforeDir="false" afterPath="$PROJECT_DIR$/../youtube_tcp_test/src/youtube-dl.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CMakeCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CMakeCXXCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CMakeSystem.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CompilerIdC/a.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.10.3/CompilerIdCXX/a.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/downloadLibs.dir/DependInfo.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/downloadLibs.dir/build.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/downloadLibs.dir/cmake_clean.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/downloadLibs.dir/depend.internal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/downloadLibs.dir/depend.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/downloadLibs.dir/progress.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.cxx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/youtube_test.dir/C.includecache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/youtube_test.dir/DependInfo.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/youtube_test.dir/build.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/youtube_test.dir/cmake_clean.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/youtube_test.dir/depend.internal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/youtube_test.dir/depend.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/youtube_test.dir/flags.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/youtube_test.dir/link.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/youtube_test.dir/progress.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/youtube_test.dir/src/adaptive.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/youtube_test.dir/src/arguments_parser.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/youtube_test.dir/src/coro.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/youtube_test.dir/src/download_ops.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/youtube_test.dir/src/getinfo.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/youtube_test.dir/src/helper.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/youtube_test.dir/src/metrics.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/youtube_test.dir/src/mm_parser.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/youtube_test.dir/src/network_addresses.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/youtube_test.dir/src/timespec_convertor.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/youtube_test.dir/src/youtube-dl.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/youtube_test" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/youtube_test.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mm_parser.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/mm_parser.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/youtube-dl.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/youtube-dl.c" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/CMakeFiles/" />
@@ -159,17 +40,83 @@
       <file leaf-file-name="youtube-dl.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../youtube_tcp_test/src/youtube-dl.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
+            <state relative-caret-position="15">
               <caret line="27" selection-start-line="27" selection-end-line="27" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="58" selection-start-line="8" selection-start-column="58" selection-end-line="8" selection-end-column="58" />
+            <state relative-caret-position="15">
+              <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="youtube-dl.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/youtube-dl.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="49" column="13" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
+              <folding>
+                <element signature="e#798#817#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="youtube-dl.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/youtube-dl.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="312">
+              <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
+              <folding>
+                <element signature="e#777#810#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mm_parser.c" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/mm_parser.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="182">
+              <caret line="70" column="56" selection-start-line="70" selection-start-column="56" selection-end-line="70" selection-end-column="56" />
+              <folding>
+                <element signature="e#757#779#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="metrics.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/metrics.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1650">
+              <caret line="110" selection-start-line="110" selection-end-line="110" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="download_ops.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/download_ops.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2655">
+              <caret line="177" column="28" selection-start-line="177" selection-start-column="28" selection-end-line="177" selection-end-column="28" />
+              <folding>
+                <element signature="e#757#780#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -178,11 +125,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>my_curl</find>
-      <find>load_stream</find>
-      <find>Full HTTP transfer completed for stream</find>
-      <find>command not</find>
-      <find>youtubeevent12;</find>
       <find>outubeevent12;</find>
       <find>playing</find>
       <find>get_curr_playoutbuf_len_forstream</find>
@@ -208,6 +150,11 @@
       <find>get</find>
       <find>check_st</find>
       <find>checkstall</find>
+      <find>Protocol name not provided, cannot determine if input is local or a network protocol, buffers and access patterns cannot be configured optimally without knowing the protocol</find>
+      <find>Protocol name not provided</find>
+      <find>666</find>
+      <find>av_register_all()</find>
+      <find>init_lib</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -235,17 +182,18 @@
         <option value="$PROJECT_DIR$/src/timespec_convertor.c" />
         <option value="$PROJECT_DIR$/src/curlops.c" />
         <option value="$PROJECT_DIR$/src/youtube-dl.h" />
-        <option value="$PROJECT_DIR$/src/mm_parser.c" />
         <option value="$PROJECT_DIR$/src/timespec_convertor.h" />
         <option value="$PROJECT_DIR$/src/download_ops.h" />
         <option value="$PROJECT_DIR$/src/getinfo.c" />
-        <option value="$PROJECT_DIR$/src/download_ops.c" />
-        <option value="$PROJECT_DIR$/src/youtube-dl.c" />
         <option value="$PROJECT_DIR$/src/helper.h" />
         <option value="$PROJECT_DIR$/src/arguments_parser.c" />
         <option value="$PROJECT_DIR$/src/helper.c" />
         <option value="$PROJECT_DIR$/libs_install.sh" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/src/download_ops.c" />
+        <option value="$PROJECT_DIR$/src/youtube-dl.c" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/mm_parser.c" />
       </list>
     </option>
   </component>
@@ -262,6 +210,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -278,12 +227,11 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../youtube_tcp_test" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunDashboard">
@@ -300,7 +248,7 @@
   </component>
   <component name="RunManager" selected="Application.youtube_test">
     <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="youtube_test" RUN_TARGET_NAME="youtube_test" EXPLICIT_BUILD_TARGET_NAME="all" />
-    <configuration name="youtube_test" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="https://www.youtube.com/watch?v=rru2passumI&amp;t=9s --verbose --p 3039,3040,3041 --qver Q039 --maxtime 30" PASS_PARENT_ENVS_2="true" PROJECT_NAME="youtube_test" TARGET_NAME="youtube_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="youtube_test" RUN_TARGET_NAME="youtube_test" />
+    <configuration name="youtube_test" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="https://www.youtube.com/watch?v=TaTuskhgdXs --verbose --p 3039,3040,3041 --qver Q039 --maxtime 30" PASS_PARENT_ENVS_2="true" PROJECT_NAME="youtube_test" TARGET_NAME="youtube_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="youtube_test" RUN_TARGET_NAME="youtube_test" />
     <list>
       <item itemvalue="Application.Build All" />
       <item itemvalue="Application.youtube_test" />
@@ -363,6 +311,9 @@
       <workItem from="1530561085715" duration="38000" />
       <workItem from="1530804196495" duration="73000" />
       <workItem from="1530804347297" duration="1797000" />
+      <workItem from="1531138501099" duration="5852000" />
+      <workItem from="1531151356160" duration="2845000" />
+      <workItem from="1531210561812" duration="3217000" />
     </task>
     <task id="LOCAL-00001" summary="expended input for quic">
       <created>1529312221866</created>
@@ -417,30 +368,31 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="230284000" />
+    <option name="totallyTimeSpent" value="242198000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="2493" height="1415" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19473684" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.49979943" weight="0.3572543" />
       <window_info anchor="bottom" id="CMake" order="11" weight="0.3299532" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50040483" side_tool="true" weight="0.32943925" />
+      <window_info anchor="right" x="0" y="0" width="573" height="1215" id="Documentation" order="3" side_tool="true" visible="true" weight="0.29505518" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32917318" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.16536662" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49959514" weight="0.34423676" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19820188" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.38377535" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49959514" visible="true" weight="0.3447738" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.33463338" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.33463338" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" x="0" y="0" width="573" height="1215" id="Documentation" order="3" side_tool="true" visible="true" weight="0.29505518" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.38377535" />
     </layout>
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -469,7 +421,8 @@
     <MESSAGE value="Support of error code and single stream per connection mode" />
     <MESSAGE value="Support of output help" />
     <MESSAGE value="Moved to shared libs support" />
-    <option name="LAST_COMMIT_MESSAGE" value="Moved to shared libs support" />
+    <MESSAGE value="Fix luck of ffmpeg protocols" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix luck of ffmpeg protocols" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -480,8 +433,43 @@
           <line>72</line>
           <option name="timeStamp" value="177" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/download_ops.c</url>
+          <line>304</line>
+          <option name="timeStamp" value="247" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/download_ops.c</url>
+          <line>370</line>
+          <option name="timeStamp" value="248" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/download_ops.c</url>
+          <line>373</line>
+          <option name="timeStamp" value="249" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/download_ops.c</url>
+          <line>381</line>
+          <option name="timeStamp" value="250" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/download_ops.c</url>
+          <line>366</line>
+          <option name="timeStamp" value="253" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/download_ops.c</url>
+          <line>339</line>
+          <option name="timeStamp" value="254" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/download_ops.c</url>
+          <line>358</line>
+          <option name="timeStamp" value="255" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="243" />
+      <option name="time" value="261" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
@@ -691,13 +679,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build/ffmpeg_install/include/libavformat/avformat.h" />
-    <entry file="file://$PROJECT_DIR$/../quic_probe/include/quic_downloader.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../quic_probe/src/main.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1537">
@@ -747,13 +728,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/youtube-dl.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/download_ops.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
@@ -782,34 +756,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/download_ops.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2490">
-          <caret line="166" column="29" selection-start-line="166" selection-start-column="29" selection-end-line="166" selection-end-column="29" />
-          <folding>
-            <element signature="e#757#780#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mm_parser.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1905">
-          <caret line="127" column="20" selection-start-line="127" selection-start-column="20" selection-end-line="127" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Downloads/libevent-2.1.8-stable/epoll.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="455">
           <caret line="461" selection-start-line="461" selection-end-line="461" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/libevent-2.1.8-stable/event.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8">
-          <caret line="1946" selection-start-line="1946" selection-end-line="1946" />
         </state>
       </provider>
     </entry>
@@ -843,34 +793,92 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/libs_install.sh" />
     <entry file="file://$PROJECT_DIR$/OLD_Makefile" />
-    <entry file="file://$PROJECT_DIR$/src/youtube-dl.c">
+    <entry file="file://$PROJECT_DIR$/../quic_probe/include/quic_downloader.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="290" selection-start-line="290" selection-end-line="290" />
+        <state relative-caret-position="360">
+          <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/libevent-2.1.8-stable/event.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1645" selection-start-line="1645" selection-end-line="1645" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/download_ops.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2655">
+          <caret line="177" column="28" selection-start-line="177" selection-start-column="28" selection-end-line="177" selection-end-column="28" />
           <folding>
-            <element signature="e#777#810#0" expanded="true" />
+            <element signature="e#757#780#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/metrics.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-345">
-          <caret line="80" column="125" selection-start-line="80" selection-start-column="125" selection-end-line="80" selection-end-column="125" />
+        <state relative-caret-position="1650">
+          <caret line="110" selection-start-line="110" selection-end-line="110" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../build/ffmpeg-4.0/build/include/libavformat/avformat.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="2024" column="20" selection-start-line="2024" selection-start-column="5" selection-end-line="2024" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/youtube-dl.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="49" column="13" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
+          <folding>
+            <element signature="e#798#817#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../youtube_tcp_test/src/youtube-dl.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
+        <state relative-caret-position="15">
           <caret line="27" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="58" selection-start-line="8" selection-start-column="58" selection-end-line="8" selection-end-column="58" />
+        <state relative-caret-position="15">
+          <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/youtube-dl.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
+          <folding>
+            <element signature="e#777#810#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mm_parser.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="70" column="56" selection-start-line="70" selection-start-column="56" selection-end-line="70" selection-end-column="56" />
+          <folding>
+            <element signature="e#757#779#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

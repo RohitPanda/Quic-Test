@@ -9,7 +9,7 @@ if [ "" == "$PKG_OK" ]; then
   echo "No CMake. Setting up."
   wget https://cmake.org/files/v3.10/cmake-3.10.3-Linux-x86_64.tar.gz|| exit -1
   tar -xf cmake-3.10.3-Linux-x86_64.tar.gz
-  export PATH=$PWD/cmake-3.10.3-Linux-x86_64/bin:$PATH
+  cd 
 fi
 
 PKG_OK=$(go version|grep "go version go")
@@ -97,7 +97,7 @@ wget "https://ffmpeg.org/releases/ffmpeg-${FFMPEG_VERSION}.tar.gz"|| exit -1
 tar -xf ffmpeg-${FFMPEG_VERSION}.tar.gz
 cd ffmpeg-${FFMPEG_VERSION}
 mkdir -p build
-./configure --enable-shared --disable-static --prefix=/ --libdir=/lib --disable-all --enable-avformat --enable-avcodec --enable-avutil --enable-demuxer=mov --enable-demuxer=matroska --enable-demuxer=flv --disable-debug --enable-lto --enable-small --disable-zlib --disable-bzlib --disable-pthreads
+./configure --enable-shared --disable-static --prefix=/ --libdir=/lib --disable-all --enable-avformat --enable-avcodec --enable-avutil --enable-demuxer=mov --enable-demuxer=matroska --enable-demuxer=flv --disable-debug --enable-lto --enable-small --disable-zlib --disable-bzlib --disable-pthreads --enable-protocol=file
 make install DESTDIR=$PWD/build/
 cd ..
 

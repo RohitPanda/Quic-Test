@@ -64,15 +64,16 @@ void mm_parser(void *arg) {
 
 	AVIOContext *avio = avio_alloc_context(buff, CURL_MAX_WRITE_SIZE, 0,
 			prog, read_packet, NULL, NULL);
+
 	if (avio == NULL) {
 		exit(EXIT_FAILURE);
 	}
-
 	AVFormatContext *fmt_ctx = avformat_alloc_context();
 	if (fmt_ctx == NULL) {
 		exit(EXIT_FAILURE);
 	}
 	fmt_ctx->pb = avio;
+	avio_find_protocol_name()
 	int ret = avformat_open_input(&fmt_ctx, NULL, NULL, NULL);
 	if (ret < 0) {
 		exit(EXIT_FAILURE);
@@ -137,7 +138,7 @@ void mm_parser(void *arg) {
 		}
 		av_packet_unref(&pkt);
 	}
-
+	avformat_close_input(fmt_ctx);
 	avformat_free_context(fmt_ctx);
 	av_free(avio);
 

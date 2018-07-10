@@ -1,8 +1,4 @@
 #!/bin/bash
-if [ "$EUID" -ne 0 ]
-  then echo "Please run as root"
-  exit
-fi
 sudo rm -rf ./build
 mkdir build
 cd build
@@ -35,7 +31,7 @@ if [ "" == "$PKG_OK" ]; then
   make distclean
   ./configure
   make
-  make install
+  sudo make install
   cd ..
 fi
 
@@ -43,12 +39,12 @@ git clone https://boringssl.googlesource.com/boringssl
 cd boringssl
 git checkout chromium-stable
 cmake . &&  make
-cmake -DCMAKE_BUILD_TYPE=Release . && make
+  cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=1 . && make
 BORINGSSL_SOURCE=$PWD
 mkdir -p lib
 cd lib
-ln -s $BORINGSSL_SOURCE/ssl/libssl.a
-ln -s $BORINGSSL_SOURCE/crypto/libcrypto.a
+  ln -s $BORINGSSL_SOURCE/ssl/libssl.a
+  ln -s $BORINGSSL_SOURCE/crypto/libcrypto.a
 cd ..
 cd ..
 
@@ -60,7 +56,7 @@ if [ "" == "$PKG_OK" ]; then
   tar -xf libevent-2.1.8-stable.tar.gz
   cd libevent-2.1.8-stable
   ./configure && make
-  make install
+  sudo make install
   cd ..
 fi
 
@@ -80,24 +76,25 @@ if [ "" == "$PKG_OK" ]; then
   cd yasm-1.2.0
   ./configure
   make
-  make install
+  sudo make install
   cd ..
 fi
 
 CURL_VERSION=7.58.0
 
 wget "https://curl.haxx.se/download/curl-${CURL_VERSION}.tar.gz"|| exit -1
-sudo tar -xf curl-${CURL_VERSION}.tar.gz
+tar -xf curl-${CURL_VERSION}.tar.gz
 cd curl-${CURL_VERSION}
 mkdir -p build
-LIBS="-ldl -lm -lpthread -lz" ./configure --with-libssl-prefix=${BORINGSSL_SOURCE} --with-ssl=${BORINGSSL_SOURCE} --prefix=/ --enable-ipv6 --disable-manual --disable-dict --disable-file --disable-file --disable-ftp --disable-gopher --disable-imap --disable-pop3 --disable-rtsp --disable-smtp --disable-telnet --disable-tftp
-make install DESTDIR=$PWD/build/
+  LIBS="-ldl -lm -lpthread -lz" ./configure --with-ssl=${BORINGSSL_SOURCE} --prefix=$PWD/build --disable-shared --enable-ipv6 --disable-manual --disable-dict --disable-file --disable-file --disable-ftp --disable-gopher --disable-imap --disable-pop3 --disable-rtsp --disable-smtp --disable-telnet --disable-tftp --disable-smb
+  make
+  make install
 cd ..
 
 FFMPEG_VERSION=4.0
 
 wget "https://ffmpeg.org/releases/ffmpeg-${FFMPEG_VERSION}.tar.gz"|| exit -1
-sudo tar -xf ffmpeg-${FFMPEG_VERSION}.tar.gz
+tar -xf ffmpeg-${FFMPEG_VERSION}.tar.gz
 cd ffmpeg-${FFMPEG_VERSION}
 mkdir -p build
 ./configure --enable-shared --disable-static --prefix=/ --libdir=/lib --disable-all --enable-avformat --enable-avcodec --enable-avutil --enable-demuxer=mov --enable-demuxer=matroska --enable-demuxer=flv --disable-debug --enable-lto --enable-small --disable-zlib --disable-bzlib --disable-pthreads

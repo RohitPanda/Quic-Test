@@ -175,6 +175,8 @@ static int cleanup_download_loop(struct myprogress *prog, int num, int errorcode
 	  	}
 	}
 	free(prog);
+	if(metric.errorcode == 0)
+		metric.errorcode = errorcode;
 	return metric.errorcode;
 }
 

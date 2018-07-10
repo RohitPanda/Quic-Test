@@ -106,7 +106,6 @@ static int init_quic_client()
 static int init_libraries() {
     if (init_quic_client() == -1)
         return -1;
-	//av_register_all();
 
 	return 0;
 }

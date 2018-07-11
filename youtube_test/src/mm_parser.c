@@ -138,7 +138,7 @@ void mm_parser(void *arg) {
 		}
 		av_packet_unref(&pkt);
 	}
-	avformat_close_input(fmt_ctx);
+	avformat_close_input(&fmt_ctx);
 	avformat_free_context(fmt_ctx);
 	av_free(avio);
 

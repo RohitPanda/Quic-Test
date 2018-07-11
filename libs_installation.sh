@@ -9,7 +9,7 @@ if [ "" == "$PKG_OK" ]; then
   echo "No CMake. Setting up."
   wget https://cmake.org/files/v3.10/cmake-3.10.3-Linux-x86_64.tar.gz|| exit -1
   tar -xf cmake-3.10.3-Linux-x86_64.tar.gz
-  cd 
+  export PATH=$PWD/cmake-3.10.3-Linux-x86_64/bin:$PATH
 fi
 
 PKG_OK=$(go version|grep "go version go")

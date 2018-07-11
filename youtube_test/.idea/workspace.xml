@@ -17,13 +17,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec010067-8149-486c-84d1-3e54f6e3c22e" name="Default" comment="Fix luck of ffmpeg protocols">
-      <change beforePath="$PROJECT_DIR$/../youtube_tcp_test/src/mm_parser.c" beforeDir="false" afterPath="$PROJECT_DIR$/../youtube_tcp_test/src/mm_parser.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../youtube_tcp_test/src/youtube-dl.c" beforeDir="false" afterPath="$PROJECT_DIR$/../youtube_tcp_test/src/youtube-dl.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="ec010067-8149-486c-84d1-3e54f6e3c22e" name="Default" comment="Close update">
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quic_probe/src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/../quic_probe/src/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mm_parser.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/mm_parser.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/youtube-dl.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/youtube-dl.c" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/CMakeFiles/" />
@@ -40,7 +37,7 @@
       <file leaf-file-name="youtube-dl.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../youtube_tcp_test/src/youtube-dl.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
+            <state relative-caret-position="405">
               <caret line="27" selection-start-line="27" selection-end-line="27" />
             </state>
           </provider>
@@ -58,7 +55,7 @@
       <file leaf-file-name="youtube-dl.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/youtube-dl.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
+            <state relative-caret-position="735">
               <caret line="49" column="13" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
               <folding>
                 <element signature="e#798#817#0" expanded="true" />
@@ -70,8 +67,8 @@
       <file leaf-file-name="youtube-dl.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/youtube-dl.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
+            <state relative-caret-position="1620">
+              <caret line="108" selection-start-line="108" selection-end-line="108" />
               <folding>
                 <element signature="e#777#810#0" expanded="true" />
               </folding>
@@ -82,8 +79,8 @@
       <file leaf-file-name="mm_parser.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/mm_parser.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="70" column="56" selection-start-line="70" selection-start-column="56" selection-end-line="70" selection-end-column="56" />
+            <state relative-caret-position="375">
+              <caret line="129" column="13" selection-start-line="129" selection-start-column="13" selection-end-line="129" selection-end-column="13" />
               <folding>
                 <element signature="e#757#779#0" expanded="true" />
               </folding>
@@ -95,7 +92,7 @@
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
+              <caret column="5" selection-start-column="5" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -210,7 +207,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -227,6 +223,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -314,6 +311,7 @@
       <workItem from="1531138501099" duration="5852000" />
       <workItem from="1531151356160" duration="2845000" />
       <workItem from="1531210561812" duration="3217000" />
+      <workItem from="1531300334229" duration="1626000" />
     </task>
     <task id="LOCAL-00001" summary="expended input for quic">
       <created>1529312221866</created>
@@ -364,35 +362,42 @@
       <option name="project" value="LOCAL" />
       <updated>1530540369705</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Close stream referencing">
+      <created>1531301915464</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1531301915464</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="242198000" />
+    <option name="totallyTimeSpent" value="243824000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="2493" height="1415" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19797571" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.49979943" weight="0.3572543" />
       <window_info anchor="bottom" id="CMake" order="11" weight="0.3299532" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50040483" side_tool="true" weight="0.32943925" />
-      <window_info anchor="right" x="0" y="0" width="573" height="1215" id="Documentation" order="3" side_tool="true" visible="true" weight="0.29505518" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32917318" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.16536662" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49959514" weight="0.34423676" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19820188" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.38377535" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32917318" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.33463338" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49959514" visible="true" weight="0.34399375" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.33463338" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" x="0" y="0" width="573" height="1215" id="Documentation" order="3" side_tool="true" visible="true" weight="0.29505518" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.38377535" />
     </layout>
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -422,7 +427,8 @@
     <MESSAGE value="Support of output help" />
     <MESSAGE value="Moved to shared libs support" />
     <MESSAGE value="Fix luck of ffmpeg protocols" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix luck of ffmpeg protocols" />
+    <MESSAGE value="Close stream referencing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Close stream referencing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -833,7 +839,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/youtube-dl.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
+        <state relative-caret-position="735">
           <caret line="49" column="13" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
           <folding>
             <element signature="e#798#817#0" expanded="true" />
@@ -843,7 +849,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../youtube_tcp_test/src/youtube-dl.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
+        <state relative-caret-position="405">
           <caret line="27" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
@@ -857,8 +863,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/youtube-dl.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
+        <state relative-caret-position="1620">
+          <caret line="108" selection-start-line="108" selection-end-line="108" />
           <folding>
             <element signature="e#777#810#0" expanded="true" />
           </folding>
@@ -868,14 +874,14 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
+          <caret column="5" selection-start-column="5" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/mm_parser.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="70" column="56" selection-start-line="70" selection-start-column="56" selection-end-line="70" selection-end-column="56" />
+        <state relative-caret-position="375">
+          <caret line="129" column="13" selection-start-line="129" selection-start-column="13" selection-end-line="129" selection-end-column="13" />
           <folding>
             <element signature="e#757#779#0" expanded="true" />
           </folding>

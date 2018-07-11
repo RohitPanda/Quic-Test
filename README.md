@@ -11,7 +11,7 @@ Tests were build on Ubuntu 18.04 LTS.
 To install libraries, run bash ./libs_installation.sh.<br>
 Script requires installed build-essential tools, especially gcc and make. To download all distributives with wget, please set up all settings like proxy in advance. <br>
 QUIC YouTube test requires: lsquic, ffmpeg, libevent.<br>
-YouTube test (tcp_youtube_test) requires: ffmgep, curl, yasm, zlib.<br>
+YouTube test (tcp_youtube_test) requires: ffmgep, curl, yasm, zlib. Curl should be built locally to disable extra features and use the same encryption library for both tests.<br>
 
 For lsquic and curl boringssl is required.<br>
 Boringssl is built with go.<br>

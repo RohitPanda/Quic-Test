@@ -57,16 +57,16 @@ void read_result(struct quic_engine_shell* client, const char* file_name, double
 
 int main()
 {
-    uint ports[] = {3039, 3040, 3041, 3042};
+    uint ports[] = {3039};
 	quic_args quic_args_ref =
 	{
-		.is_ipv4 = 0,
+		.is_ipv4 = 1,
 		.quic_ver_str = QUIC_VERSION,
 		.quic_ver_str_size = strlen(QUIC_VERSION),
 		.timeout_ms = 60000,
 		.use_prev_conn_data = 0,
 		.local_port_numbers = ports,
-        .port_count = 4,
+        .port_count = 1,
 		.max_streams = 10,
         .is_debug = 0,
         .is_one_conn_per_stream = 0
@@ -187,10 +187,10 @@ int main()
         download_requests2[1].buffer.allocated_size = BUFFER_SIZE;
         download_requests2[1].buffer.used_size = 0;
 
-        start_downloading(quic_engine_ref, download_requests2, 2);
+        start_downloading(quic_engine_ref, download_requests2, 1);
 
         read_result(quic_engine_ref, "video_quic.txt", &total_time_s);
-        read_result(quic_engine_ref, "audio_quic.txt", &total_time_s);
+        //read_result(quic_engine_ref, "audio_quic.txt", &total_time_s);
 
         free(download_requests2[0].buffer.buffer);
         free(download_requests2[1].buffer.buffer);

@@ -59,6 +59,7 @@
 #define CURLERROR 610
 #define CURLERROR_GETINFO 611
 #define FIRSTRESPONSERROR 620
+#define ACCESS_DENIED 621
 
 #define LEN_PLAYOUT_BUFFER 40 /*Length of the playout buffer in seconds*/
 #define LEN_CHUNK_FETCH 1 /*Length to be requested to refill buffer*/

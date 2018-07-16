@@ -188,7 +188,8 @@ size_t getfilesize(char* url)
 			.header_only = 1,
 			.max_write_size = 0,
 			.url_request.url_data = url,
-			.url_request.url_len = strlen(url)
+			.url_request.url_len = strlen(url),
+			.buffer.allocated_size = 0
 	};
 	int status = start_downloading(quic_client, &request, 1);
 
@@ -199,6 +200,8 @@ size_t getfilesize(char* url)
 	struct output_data* output_data = get_download_result(quic_client);
 	if (output_data->error_code || output_data->http_code != 200)
 	{
+		if (output_data->http_code >= 400)
+			metric.errorcode = ACCESS_DENIED_URL_CODE;
 		destroy_output_data_container(output_data);
 		destroy_client(quic_client);
 		return -1;

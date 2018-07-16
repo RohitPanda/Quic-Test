@@ -8,7 +8,6 @@
 
 #include "network_addresses.h"
 
-
 enum ip_support get_ip_version_support()
 {
     enum ip_support result_support = IP_SUPPORT_NONE;
@@ -34,13 +33,15 @@ enum ip_support get_ip_version_support()
             struct sockaddr_in6* addr = (struct sockaddr_in6*)address->ifa_addr;
             if (IN6_IS_ADDR_LOOPBACK(&addr->sin6_addr))
                 continue;
-            if (result_support == IP_SUPPORT_NONE)
-                result_support = IP_SUPPORT_IPV6;
-            else if (result_support == IP_SUPPORT_IPV4)
-            {
-                result_support = IP_SUPPORT_BOTH;
-                break;
+            if (IN6_IS_ADDR_MC_GLOBAL(&addr->sin6_addr)) {
+                if (result_support == IP_SUPPORT_NONE)
+                    result_support = IP_SUPPORT_IPV6;
+                else if (result_support == IP_SUPPORT_IPV4) {
+                    result_support = IP_SUPPORT_BOTH;
+                    break;
+                }
             }
+
         }
     }
     freeifaddrs(local_adresses);

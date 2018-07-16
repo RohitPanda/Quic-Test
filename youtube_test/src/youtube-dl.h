@@ -57,9 +57,9 @@
 #define TOO_FAST 608 /* The test finsihed too fast */
 #define PARSERROR 609 /*There was an error with the initial HTTP response*/
 #define LSQUIC_ENGINE_ERROR 610
-#define CURLERROR_GETINFO 611
 #define LSQUIC_TIMEOUT_ERROR 612
 #define FIRSTRESPONSERROR 620
+#define ACCESS_DENIED_URL_CODE 621
 
 #define LEN_PLAYOUT_BUFFER 40 /*Length of the playout buffer in seconds*/
 #define LEN_CHUNK_FETCH 1 /*Length to be requested to refill buffer*/

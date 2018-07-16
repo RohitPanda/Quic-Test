@@ -24,6 +24,8 @@
 #include "youtube-dl.h"
 #include <stdbool.h>
 
-void find_urls(char * data);
+
+
+int find_urls(char * data);
 
 #endif /* GETINFO_H_ */

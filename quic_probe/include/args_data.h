@@ -12,7 +12,7 @@
 typedef struct quic_args {
     int is_ipv4;
 
-    // Q035, Q039 or Q042
+    // Q035, Q039 or Q043
     const char* quic_ver_str;
     size_t quic_ver_str_size;
 

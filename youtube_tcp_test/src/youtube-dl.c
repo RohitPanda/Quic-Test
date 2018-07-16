@@ -214,23 +214,22 @@ static int extract_media_urls(char youtubelink[]) {
 
 	char *pagecontent = malloc(sizeof(char [PAGESIZE]));
 	if(pagecontent == NULL) {
-		ret = -1;
-		goto out;
+		free(pagecontent);
+		return -1;
 	}
 	memzero(pagecontent, PAGESIZE*sizeof(char));
 
 	if(download_to_memory(youtubelink, pagecontent) < 0) {
 		metric.errorcode=FIRSTRESPONSERROR;
-		ret = -2;
-		goto out;
+		free(pagecontent);
+		return -2;
 	}
 
 //		TODO:metric.itag needs to be added, updated and printed.
 //	TODO:errorcodes for each stream can be different. Add functionality to override errorcode of 1 over the other.
 
-	find_urls(pagecontent);
+	ret = find_urls(pagecontent);
 
-out:
 	free(pagecontent);
 
 	return ret;

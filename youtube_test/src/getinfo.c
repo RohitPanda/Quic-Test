@@ -33,6 +33,7 @@
 #include "mm_parser.h"
 #include "download_ops.h"
 extern metrics metric;
+extern struct program_arguments program_arguments;
 #define ITAGLEN 7
 #define MANIFESTLEN 1024
 #define MSGBUFLEN 100
@@ -254,7 +255,8 @@ static int extract_formattype(char * data , char * type)
     }
     else if( reti == REG_NOMATCH )
     {
-    	perror("No match type (type)");
+        if (program_arguments.instantaneous_output)
+    	    perror("No match type (type)");
         regfree(&regex);
     	return 0;
     }
@@ -474,15 +476,12 @@ static int getbitrate(char* url) {
 
 	long size = getfilesize(url);
 	if(size <= 0) {
-		ret = -1;
-		goto out;
+		return -1;
 	}
 
 	long bytes_sec = size / metric.dur_spec;
 
 	ret = bytes_sec;
-out:
-
 	return ret;
 }
 
@@ -516,7 +515,6 @@ static videourl * extract_url_list(char * data, int * index, bool adaptive)
 		}
 		free(datatmp);
 	}
-
 	return url_list;
 }
 
@@ -527,17 +525,21 @@ static int compar_bitrate(const void *left, const void *right) {
 	return myright->bitrate - myleft->bitrate;
 }
 
-static void findformat(char * data)
+static int findformat(char * data)
 {
 	int index_adaptive=0, index_nonadaptive=0;
 
 	/*get the url lists populated*/
 	videourl * url_list = extract_url_list(data, &index_nonadaptive, false);
-	videourl * url_list_adaptive =extract_url_list(data, &index_adaptive, true);
+	videourl * url_list_adaptive = extract_url_list(data, &index_adaptive, true);
 
 	for(int i =0 ; i<index_nonadaptive; ++i) {
-		url_list[i].bitrate = getbitrate(url_list[i].url);
+		int url_bitrate = getbitrate(url_list[i].url);
+		if (url_bitrate < 0)
+			return -1;
+		url_list[i].bitrate = url_bitrate;
 	}
+
 
 	memcpy(metric.no_adap_url, url_list, index_nonadaptive * sizeof(*url_list));
 	memset(&metric.no_adap_url[index_nonadaptive], 0, sizeof(*metric.no_adap_url));
@@ -562,6 +564,7 @@ static void findformat(char * data)
 	qsort(metric.no_adap_url, index_nonadaptive, sizeof(*metric.no_adap_url), compar_bitrate);
 	qsort(metric.adap_audiourl, a_index, sizeof(*metric.adap_audiourl), compar_bitrate);
 	qsort(metric.adap_videourl, v_index, sizeof(*metric.adap_videourl), compar_bitrate);
+	return 0;
 }
 
 /* return value of 1 indicates non-adaptive format
@@ -570,7 +573,7 @@ static void findformat(char * data)
  * if bool adaptive is false, adaptive formats are not considered.
  */
 
-void find_urls(char * data)
+int find_urls(char * data)
 {
 //	char manifest[MANIFESTLEN];
 //	extract_manifestlink(data , manifest);
@@ -580,8 +583,5 @@ void find_urls(char * data)
 		metric.dur_spec=-1;
 	/*Get the stream URLs*/
 
-	findformat(data);
-
-	return;
-
+	return findformat(data);
 }

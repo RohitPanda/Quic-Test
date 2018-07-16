@@ -214,9 +214,13 @@ static int extract_media_urls(char youtubelink[]) {
 //		TODO:metric.itag needs to be added, updated and printed.
 //	TODO:errorcodes for each stream can be different. Add functionality to override errorcode of 1 over the other.
 
-	find_urls(request.buffer.buffer);
+	if (find_urls(request.buffer.buffer) < 0)
+    {
+        free(request.buffer.buffer);
+        return -3;
+    }
 
-	return ret;
+	return 0;
 }
 
 filetype filetype_from_text(const char* type_str, int is_adaptive)
@@ -287,8 +291,10 @@ bool process_adaptive()
 
 		int j = 0;
 		do {
-			char *vformat = strstr(metric.adap_videourl[i].type, "video/") + strlen("video/");
-			char *aformat = strstr(metric.adap_audiourl[j].type, "audio/") + strlen("audio/");
+            char* found_pointer = strstr(metric.adap_videourl[i].type, "video/");
+            char *vformat = found_pointer + strlen("video/");
+            found_pointer = strstr(metric.adap_audiourl[j].type, "audio/");
+			char *aformat = found_pointer + strlen("audio/");
 
 			if(strcmp(vformat, aformat) == 0) {
 				metric.url[1] = metric.adap_audiourl[j];
@@ -377,6 +383,8 @@ int main(int argc, char* argv[])
 	if (!process_adaptive())
 		process_nonadaptive();
 
+    destroy_libraries();
+
 	if(metric.errorcode == 403) {
 		return 148;
 	} else if(metric.errorcode == TOO_FAST) {
@@ -384,5 +392,5 @@ int main(int argc, char* argv[])
 	} else {
 		return 0;
 	}
-	destroy_libraries();
+
 }

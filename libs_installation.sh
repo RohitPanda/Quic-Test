@@ -10,7 +10,7 @@ if [ "" == "$PKG_OK" ]; then
   wget https://cmake.org/files/v3.10/cmake-3.10.3-Linux-x86_64.tar.gz|| exit -1
   tar -xf cmake-3.10.3-Linux-x86_64.tar.gz
   export PATH=$PWD/cmake-3.10.3-Linux-x86_64/bin:$PATH
-fi
+fi  
 
 PKG_OK=$(go version|grep "go version go")
 echo Checking for Go: $PKG_OK
@@ -101,17 +101,32 @@ mkdir -p build
 make install DESTDIR=$PWD/build/
 cd ..
 
+mkdir -p tests
+TEST_DIR=$PWD/tests
+
 cd youtube_tcp_test
-cmake .
+mkdir -p build
+cd build
+cmake ..
 make
+cp youtube_tcp_test $TEST_DIR/.
+cd ..
 cd ..
 
 cd quic_probe
-cmake .
+mkdir -p build
+cd build
+cmake ..
 make
+cp libquic_client.a ../.
+cd ..
 cd ..
 
 cd youtube_test
-cmake .
+mkdir -p build
+cd build
+cmake ..
 make
+cp youtube_test $TEST_DIR/.
+cd ..
 cd ..

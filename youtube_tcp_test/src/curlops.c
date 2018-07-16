@@ -275,8 +275,8 @@ long getfilesize(const char* url)
 
 	CURL *curl_handle = curl_easy_init();
 	if(curl_handle == NULL) {
-		ret = -1;
-		goto out;
+		curl_easy_cleanup(curl_handle);
+		return -1;
 	}
 
 	CURLcode error = 0;
@@ -290,35 +290,35 @@ long getfilesize(const char* url)
 	error |= curl_easy_setopt(curl_handle, CURLOPT_SSL_VERIFYPEER, 0);
 
 	if(error) {
-		ret = -2;
-		goto out;
+		curl_easy_cleanup(curl_handle);
+		return -2;
 	}
 
 	/* request to download the file */
 	CURLcode c = curl_easy_perform(curl_handle);
 	if(c != CURLE_OK) {
 		fprintf(stderr, "curl failed with %d: %s %s\n",c, curl_easy_strerror(c), url);
-		ret = -3;
-		goto out;
+		curl_easy_cleanup(curl_handle);
+		return -3;
 	}
 
 	long http_code;
 	error = curl_easy_getinfo(curl_handle, CURLINFO_RESPONSE_CODE, &http_code);
 	if(http_code != 200 || error != CURLE_OK) {
-		ret = -4;
-		goto out;
+		curl_easy_cleanup(curl_handle);
+		if (http_code >= 400)
+			metric.errorcode = ACCESS_DENIED;
+		return -4;
 	}
 
 	double content_length;
 	error = curl_easy_getinfo(curl_handle, CURLINFO_CONTENT_LENGTH_DOWNLOAD, &content_length);
 	if(error != CURLE_OK) {
-		ret = -5;
-		goto out;
+		curl_easy_cleanup(curl_handle);
+		return -5;
 	}
 
 	ret = content_length;
-
-out:
 	curl_easy_cleanup(curl_handle);
 
 	return ret;

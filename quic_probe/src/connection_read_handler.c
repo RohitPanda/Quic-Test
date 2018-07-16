@@ -158,8 +158,7 @@ void post_ready_data(stream_parameters_t* stream_parameters, quic_engine_paramet
 	// remove output container out of scope of stream destructor (on_stream_close)
 	stream_parameters->data_pointer = NULL;
 	// if there are no streams, then all stream results were posted
-	if (engine->reading_streams_count == 0)
-	{
+	if (engine->reading_streams_count == 0)	{
 		event_base_loopbreak(engine->events.event_base_ref);
 	}
 
@@ -207,6 +206,9 @@ void process_finished_stream(stream_parameters_t* stream_parameters)
 	{
 		// else there is an error
 		report_http_code_error(stream_parameters, header_info);
+		if (engine->reading_streams_count == 0)	{
+			event_base_loopbreak(engine->events.event_base_ref);
+		}
 	}
 	// destroyed by charge_request function in case of redirect
 	free_http_header(&header_info);

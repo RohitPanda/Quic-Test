@@ -24,6 +24,7 @@
 #include "youtube-dl.h"
 #include <inttypes.h>
 extern metrics metric;
+extern struct program_arguments program_arguments;
 uint minbuffer = MIN_PREBUFFER;
 
 /* If end is true, it means video has finished downloading. The function will only be called at that time to
@@ -89,7 +90,8 @@ void checkstall(bool end)
 			}
 			else
 			{
-				printf("youtubeevent12;%ld;%ld;%" PRIu64 ";%.3f\n",(long)gettimeshort(),(long)metric.htime/1000000, metric.TS0, (double)(metric.Tmin-metric.Tmin0)/1000);
+				if (program_arguments.instantaneous_output)
+					printf("youtubeevent12;%ld;%ld;%" PRIu64 ";%.3f\n",(long)gettimeshort(),(long)metric.htime/1000000, metric.TS0, (double)(metric.Tmin-metric.Tmin0)/1000);
 				++metric.numofstalls;
 				metric.totalstalltime+=(double)(metric.Tmin-metric.Tmin0);
 			}

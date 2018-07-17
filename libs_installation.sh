@@ -61,7 +61,10 @@ if [ "" == "$PKG_OK" ]; then
   ./configure --enable-shared=0 --prefix $PWD/build
   make
   make install
-  cd ..
+  C_INCLUDE_PATH=$PWD/build/include:$C_INCLUDE_PATH
+  LIBRARY_PATH=$PWD/build/lib:$LIBRARY_PATH
+  export C_INCLUDE_PATH
+  export LIBRARY_PATH
 fi
 
 git clone https://github.com/litespeedtech/lsquic-client.git

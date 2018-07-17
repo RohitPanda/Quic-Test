@@ -53,11 +53,11 @@ void read_result(struct quic_engine_shell* client, const char* file_name, double
 }
 
 #define BUFFER_SIZE 10 * 1024 * 1024
-#define QUIC_VERSION "Q043"
+#define QUIC_VERSION "Q039"
 
 int main()
 {
-    uint ports[] = {3039};
+    uint ports[] = {3389, 3390, 3391};
 	quic_args quic_args_ref =
 	{
 		.is_ipv4 = 1,
@@ -66,7 +66,7 @@ int main()
 		.timeout_ms = 60000,
 		.use_prev_conn_data = 0,
 		.local_port_numbers = ports,
-        .port_count = 1,
+        .port_count = sizeof(ports)/sizeof(*ports),
 		.max_streams = 10,
         .is_debug = 0,
         .is_one_conn_per_stream = 0
@@ -163,12 +163,12 @@ int main()
 //
 //    free(download_requests[0].buffer.buffer);
 //    free(download_requests[1].buffer.buffer);
-    int times = 30;
+    int times = 1;
 
-    for(int i = 0; i < 30; i++)
+    for(int i = 0; i < times; i++)
     {
         struct download_request download_requests2[2];
-        download_requests2[0].url_request.url_data = "https://www.youtube.com/";
+        download_requests2[0].url_request.url_data = "https://r2---sn-4g5e6nzs.googlevideo.com/videoplayback?expire=1531494749&mime=video%2Fmp4&pl=32&sparams=dur,ei,gcr,id,initcwndbps,ip,ipbits,itag,lmt,mime,mm,mn,ms,mv,pl,ratebypass,requiressl,source,expire&initcwndbps=1490000&itag=22&ms=au,onr&mt=1531473045&mv=m&mm=31,26&mn=sn-4g5e6nzs,sn-i5heen7l&id=o-AJENPDwm0WTtBrhGohuRFkg0mpX1rqKSRkNTWcJYn74o&fexp=23709359,23745105&c=WEB&gcr=de&ipbits=0&requiressl=yes&fvip=2&key=yt6&lmt=1525582163023311&source=youtube&ratebypass=yes&dur=244.900&ei=_GxIW9WINp7-1wKEtJyQBQ&ip=2001%3A4ca0%3A2003%3A1920%3A707f%3Aaba2%3A6761%3Aeb07";
         download_requests2[0].url_request.url_len = strlen(download_requests2[0].url_request.url_data);
         download_requests2[0].on_write = NULL;
         download_requests2[0].header_only = 1;
@@ -180,8 +180,8 @@ int main()
         download_requests2[1].header_only = 0;
 
 
-        download_requests2[0].buffer.buffer = malloc(BUFFER_SIZE);
-        download_requests2[0].buffer.allocated_size = BUFFER_SIZE;
+        download_requests2[0].buffer.buffer = NULL;
+        download_requests2[0].buffer.allocated_size = 0;
         download_requests2[0].buffer.used_size = 0;
         download_requests2[1].buffer.buffer = malloc(BUFFER_SIZE);
         download_requests2[1].buffer.allocated_size = BUFFER_SIZE;

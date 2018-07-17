@@ -270,7 +270,7 @@ void check_process_errors(bool* should_countinue_out)
 	}
 
 	if(metric.fail_on_stall && (metric.errorcode == ERROR_STALL || metric.errorcode == TOO_FAST)) {
-		printvalues();
+		// printvalues();
 		*should_countinue_out = true;
 	}
 }

@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.9)
 project(quic_probe)
+set(CMAKE_C_STANDARD 11)
 
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -Wno-unused-parameter")
 
@@ -50,17 +51,18 @@ set(GENERAL_LIBS lsquic event pthread ssl crypto z m)
 
 include_directories(src)
 include_directories(src/test)
+include_directories(include)
 include_directories(../build/lsquic-client/include)
 include_directories(../build/boringssl/include)
-include_directories(include)
+include_directories(../build/libevent-2.1.8-stable/build/include)
 
 link_directories("../build/lsquic-client/src/liblsquic")
 link_directories("../build/boringssl/lib")
-link_directories("/usr/local/lib")
+link_directories("../build/libevent-2.1.8-stable/build/lib")
 
 ##create a library
 
-add_library(quic_client
+add_library(quic_client STATIC
     ${GENERAL_SOURCES}
 )
 

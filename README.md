@@ -4,7 +4,7 @@ This work continues [Youtube test][YouTube-test] <br>
 The goal of the thesis is testing QUIC performance for YouTube videos for IPv4 and IPv6.<br>
 
 The project consist of 3 projects: lsquic probe client, quic youtube test and modified tcp youtube test.
-Tests were build on Ubuntu 18.04 LTS.
+Tests were build on Ubuntu 16 LTS.
 
 ## Quickstart
 
@@ -17,7 +17,11 @@ For lsquic and curl boringssl is required.<br>
 Boringssl is built with go.<br>
 
 Script installs globally if no command is found: zlib, libevent, yasm. Other libraries are installed locally only.<br>
-Installing script was tested for Ubuntu 18.04 only. For manual installation or script description refer to [Manual installation][Manual installation].
+Installing script was tested for only Ubuntu 16 and 18 LTS. For manual installation or script description refer to [Manual installation][Manual installation].
+
+Generated test executables are copied to /tests. Run 'bash get_top_youtube_list.sh' first to generate list of youtube top 50 video ids and then run 'bash test_run.sh' to run all test configurations (ip4 and ipv6 for 35,39,43 quic versions).<br> To run script get_top_youtube_list.sh you need GET command installed.<br>
+Test time and used port numbers can be altered in test_run.sh MAX_TIME_ARG and PORTS variables. Results are stored in tests/results.<br>
+Tests can be automated by adding with grontab -e content of tests/schedule_tests.txt. It refreshes every day at 12:50 top youtube video list and runs tests every hour. To disable, delete added lines. Change the path according to your test directory location. For instance (cd /home/userName/tests && timeout 1h bash ..) for both lines.
 
 ## YouTube test (tcp_youtube_test)
 
@@ -31,6 +35,7 @@ New features of test:<br>
  <li>Support of TLSv1.3 with use of BoringSSl;</li>
  <li>Curl updated to 7.58;</li>
  <li>FFMGPEG updated to 4.0;</li>
+ <li>Use of static libraries only (can use binaries)</li>
 </ol>
 
 To install test, install all libraries and run cmake & make.

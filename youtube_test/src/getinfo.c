@@ -556,6 +556,11 @@ static int findformat(char * data)
 	memset(&metric.adap_audiourl[a_index], 0, sizeof(*metric.adap_audiourl));
 	memset(&metric.adap_videourl[v_index], 0, sizeof(*metric.adap_videourl));
 
+	if (a_index == 0){
+		int a = 20;
+	}
+
+
 	if(url_list!=NULL)
 		free(url_list);
 	if(url_list_adaptive!=NULL)

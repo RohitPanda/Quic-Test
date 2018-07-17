@@ -4,7 +4,7 @@ project(youtube_test)
 set(CMAKE_C_STANDARD 11)
 set(LSQUIC_CLIENT_LIBS quic_client lsquic event pthread ssl crypto z m)
 set(GENERAL_LIBS ${LSQUIC_CLIENT_LIBS})
-set(LOCAL_LIBS avutil avformat avcodec)
+set(LOCAL_LIBS avformat avcodec avutil)
 
 include_directories(../build/ffmpeg-4.0/build/include src)
 include_directories(../build/boringssl/include src)
@@ -15,7 +15,7 @@ link_directories(../build/boringssl/lib)
 link_directories(../build/lsquic-client/src/liblsquic)
 link_directories(../build/ffmpeg-4.0/build/lib)
 link_directories(../quic_probe)
-
+link_directories(../build/libevent-2.1.8-stable/build/lib)
 
 add_executable(youtube_test
         src/adaptive.c

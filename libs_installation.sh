@@ -1,9 +1,12 @@
 #!/bin/bash
+mkdir -p tests
+TEST_DIR=$PWD/tests
+
 sudo rm -rf ./build
 mkdir build
 cd build
 
-PKG_OK=$(cmake --version|grep "cmake version")
+PKG_OK=$(cmake --version|grep "cmake version 3.10")
 echo Checking for CMake: $PKG_OK
 if [ "" == "$PKG_OK" ]; then
   echo "No CMake. Setting up."
@@ -52,11 +55,12 @@ PKG_OK=$(ldconfig -p | grep /lib/libevent)
 echo Checking for libevent: $PKG_OK
 if [ "" == "$PKG_OK" ]; then
   echo "No libevent. Setting up."
-  wget https://github.com/libevent/libevent/releases/download/release-2.1.8-stable/libevent-2.1.8-stable.tar.gz|| exit -1
+  wget https://github.com/libevent/libevent/releases/download/release-2.1.8-stable/libevent-2.1.8-stable.tar.gz || exit -1
   tar -xf libevent-2.1.8-stable.tar.gz
   cd libevent-2.1.8-stable
-  ./configure && make
-  sudo make install
+  ./configure --enable-shared=0 --prefix $PWD/build
+  make
+  make install
   cd ..
 fi
 
@@ -101,8 +105,7 @@ mkdir -p build
 make install DESTDIR=$PWD/build/
 cd ..
 
-mkdir -p tests
-TEST_DIR=$PWD/tests
+
 
 cd youtube_tcp_test
 mkdir -p build

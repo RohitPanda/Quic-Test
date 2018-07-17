@@ -25,4 +25,4 @@ add_executable(youtube_tcp_test
         src/network_addresses.c
         src/network_addresses.h)
 
-target_link_libraries(youtube_tcp_test curl avutil avformat avcodec ssl crypto z m pthread dl)
+target_link_libraries(youtube_tcp_test curl avformat avcodec avutil ssl crypto z m pthread dl)

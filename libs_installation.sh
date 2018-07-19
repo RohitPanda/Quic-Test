@@ -57,6 +57,7 @@ if [ "" == "$PKG_OK" ]; then
   echo "No libevent. Setting up."
   wget https://github.com/libevent/libevent/releases/download/release-2.1.8-stable/libevent-2.1.8-stable.tar.gz || exit -1
   tar -xf libevent-2.1.8-stable.tar.gz
+  
   cd libevent-2.1.8-stable
   ./configure --enable-shared=0 --prefix $PWD/build
   make
@@ -65,6 +66,7 @@ if [ "" == "$PKG_OK" ]; then
   LIBRARY_PATH=$PWD/build/lib:$LIBRARY_PATH
   export C_INCLUDE_PATH
   export LIBRARY_PATH
+  cd ..
 fi
 
 git clone https://github.com/litespeedtech/lsquic-client.git

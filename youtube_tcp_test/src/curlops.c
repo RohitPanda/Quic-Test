@@ -182,7 +182,7 @@ static int update_curl_progress(struct myprogress * prog, CURL *http_handle[], i
 	/* Get connection time and CDN IP - Only for the first connect */
 	if(metric.full_ssl_connection_time_us[j]==0)
 	{
-		if( curl_easy_getinfo(http_handle[j], CURLINFO_APPCONNECT_TIME, &metric.full_ssl_connection_time_us[j])!= CURLE_OK)
+		if(curl_easy_getinfo(http_handle[j], CURLINFO_APPCONNECT_TIME, &metric.full_ssl_connection_time_us[j])!= CURLE_OK)
 			metric.full_ssl_connection_time_us[j] =- 1;
 	}
 	return 1; 
@@ -216,14 +216,12 @@ static int my_curl_cleanup(struct myprogress * prog, CURLM * multi_handle, CURL 
 			metric.downloadrate[j]=-1; 
 
             if(metric.url[j].playing && metric.errorcode==0){
-	  	    if( curl_easy_getinfo (http_handle[j], CURLINFO_RESPONSE_CODE, &http_code)== CURLE_OK)
-	  	    {
-	  	    	if(http_code==200)
-	  	    	{
-	  	    		if(metric.Tmin<0)
+	  	    if( curl_easy_getinfo (http_handle[j], CURLINFO_RESPONSE_CODE, &http_code) == CURLE_OK) {
+	  	    	if(http_code == 200) {
+	  	    		if(metric.Tmin < 0)
 	  	    			checkstall(true);
 	  	    	}
-	  	    	else if(http_code==0) {
+	  	    	else if(http_code == 0) {
 	  	    		metric.errorcode = CURLERROR;
 	  	    	}
 	  	    	else
@@ -238,8 +236,8 @@ static int my_curl_cleanup(struct myprogress * prog, CURLM * multi_handle, CURL 
 	curl_multi_cleanup(multi_handle);
 	free(prog);
 //	if(metric.errorcode==0 || metric.errorcode==MAXTESTRUNTIME)
-	if(metric.errorcode==0)
-		metric.errorcode=errorcode;
+	if(metric.errorcode == 0)
+		metric.errorcode = errorcode;
 	return metric.errorcode;
 }
 
@@ -361,6 +359,7 @@ int initialize_curl_handle( CURL ** http_handle_ref, int i, videourl * url, stru
     if (program_arguments.instantaneous_output)
     	puts(url_now);
 	my_curl_easy_returnhandler(curl_easy_setopt(http_handle, CURLOPT_URL, url_now),i);
+	set_ip_version(http_handle, program_arguments.ip_version);
 	/* if redirected, tell libcurl to follow redirection */
 	my_curl_easy_returnhandler(curl_easy_setopt(http_handle , CURLOPT_FOLLOWLOCATION, 1L),i);
 	/* if received 302, follow location  */
@@ -378,6 +377,7 @@ int initialize_curl_handle( CURL ** http_handle_ref, int i, videourl * url, stru
 	my_curl_easy_returnhandler(curl_easy_setopt(http_handle, CURLOPT_PROGRESSDATA, prog),i);
 	my_curl_easy_returnhandler(curl_easy_setopt(http_handle, CURLOPT_WRITEFUNCTION, write_data),i);
 	my_curl_easy_returnhandler(curl_easy_setopt(http_handle, CURLOPT_WRITEDATA, prog),i);
+
 
 	/* add the individual transfers */
 	CURLMcode mret = curl_multi_add_handle(multi_handle, http_handle);

@@ -144,17 +144,15 @@ static size_t write_to_memory(void *ptr, size_t size, size_t nmemb, void *userda
 }
 
 static int download_to_memory(char* url, void *memory) {
-	int ret = 0;
-
 	CURL *curl = curl_easy_init();
 	if(!curl) {
-		ret = -1;
-		goto out;
+		return -1;
 	}
 
 	if(set_ip_version(curl, program_arguments.ip_version) < 0) {
-		ret = -2;
-		goto out;
+        if(curl)
+            curl_easy_cleanup(curl);
+		return -2;
 	}
 
 	CURLcode error = 0;
@@ -171,8 +169,9 @@ static int download_to_memory(char* url, void *memory) {
 	error |= curl_easy_setopt(curl, CURLOPT_SSLVERSION, CURL_SSLVERSION_MAX_TLSv1_3);
 
 	if(error) {
-		ret = -3;
-		goto out;
+        if(curl)
+            curl_easy_cleanup(curl);
+		return -3;
 	}
 
 	/* Perform the request, error will get the return code */
@@ -187,8 +186,9 @@ static int download_to_memory(char* url, void *memory) {
 	error = curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &http_code);
 	if(error || http_code != 200)
 	{
-		ret = -4;
-		goto out;
+        if (curl)
+            curl_easy_cleanup(curl);
+		return -4;
 	}
 
 	if( curl_easy_getinfo(curl, CURLINFO_CONNECT_TIME, &metric.tcp_first_connection_time_us)!= CURLE_OK)
@@ -201,12 +201,12 @@ static int download_to_memory(char* url, void *memory) {
                 	metric.tcp_first_connection_time_us -= lookup_time;
                 }
         }
-	if( curl_easy_getinfo(curl, CURLINFO_APPCONNECT_TIME, &metric.first_full_connection_time_us)!= CURLE_OK)
+	if(curl_easy_getinfo(curl, CURLINFO_APPCONNECT_TIME, &metric.first_full_connection_time_us)!= CURLE_OK)
 		metric.first_full_connection_time_us = -1;
-
-out:
-	if(curl) curl_easy_cleanup(curl);
-	return ret;
+    metric.startup = gettimelong() - metric.htime;
+    if (curl)
+        curl_easy_cleanup(curl);
+    return 0;
 }
 
 static int extract_media_urls(char youtubelink[]) {
@@ -220,7 +220,7 @@ static int extract_media_urls(char youtubelink[]) {
 	memzero(pagecontent, PAGESIZE*sizeof(char));
 
 	if(download_to_memory(youtubelink, pagecontent) < 0) {
-		metric.errorcode=FIRSTRESPONSERROR;
+		metric.errorcode = FIRSTRESPONSERROR;
 		free(pagecontent);
 		return -2;
 	}
@@ -384,7 +384,7 @@ int main(int argc, char* argv[])
 
 	init(argc, argv, youtubelink);
 
-	strncpy(metric.link, youtubelink, MAXURLLENGTH-1);
+	strncpy(metric.link, youtubelink, MAXURLLENGTH - 1);
 	if(extract_media_urls(youtubelink) < 0) {
 		exit(EXIT_FAILURE);
 	}

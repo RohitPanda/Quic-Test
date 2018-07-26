@@ -152,7 +152,7 @@ void printvalues()
 	printf("%"PRIu64";", metric.TSnow*1000); // duration
 	printf("%.0f;",metric.initialprebuftime); // Initial prebuf time
 	printf("%.0f;",mtotalrate); //mtotal rate
-	printf("VIDEO;%d;%.0f;",metric.url[STREAM_VIDEO].itag,metric.downloadrate[STREAM_VIDEO]);
+	printf("VIDEO;%d;%.0f;",metric.url[STREAM_VIDEO].itag, metric.downloadrate[STREAM_VIDEO]);
 	printf("%.0f;", metric.totalbytes[STREAM_VIDEO]); //total bytes
 	printf("%.0f;", metric.downloadtime[STREAM_VIDEO] * 1000 * 1000);
 	//printf("%s;", metric.url[STREAM_VIDEO].url);

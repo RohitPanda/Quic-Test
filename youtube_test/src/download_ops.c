@@ -92,7 +92,7 @@ static int xferinfo(struct myprogress *progress, struct output_data* output)
 		// bytes per sec
 		printf("%.0f;", metric.totalbytes[progress->stream] / ((double)(now_time_us - metric.stime) / 1000000.0));
 		printf("%d;", metric.numofstalls);
-		printf("%.0f;", (metric.numofstalls>0 ? (metric.totalstalltime/metric.numofstalls) : 0)); // av stall duration
+		printf("%.0f;", (metric.numofstalls > 0 ? (metric.totalstalltime/metric.numofstalls) : 0)); // av stall duration
 		printf("%.0f;", metric.totalstalltime);
 		printf("%s;", metric.http_ver[progress->stream]);
 		printf("%s;\n", metric.quic_ver[progress->stream]);
@@ -475,8 +475,7 @@ int downloadfiles(videourl url [] )
                 break;
             }
 
-		if (process_outputs(url, &download_files_values, &last_http_code) < 0)
-		{
+		if (process_outputs(url, &download_files_values, &last_http_code) < 0) {
 			break;
 		}
 	}

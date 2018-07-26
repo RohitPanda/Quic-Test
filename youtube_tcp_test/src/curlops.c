@@ -151,7 +151,7 @@ static int update_curl_progress(struct myprogress * prog, CURL *http_handle[], i
 	if( curl_easy_getinfo(http_handle[j], CURLINFO_SIZE_DOWNLOAD, &totalbytes)!= CURLE_OK)
 		metric.totalbytes[j]=-1;
 	if(metric.totalbytes[j]!=-1)
-		metric.totalbytes[j]+=totalbytes;
+		metric.totalbytes[j] += totalbytes;
 	/* Get download time */
         if( curl_easy_getinfo(http_handle[j], CURLINFO_TOTAL_TIME, &downloadtime)!= CURLE_OK)
                 metric.downloadtime[j]=-1;

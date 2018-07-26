@@ -56,6 +56,7 @@ int check_end_sequence(char* data, size_t length, size_t* end_position)
 
 size_t on_read_to_buffer(stream_parameters_t* stream, size_t added_size)
 {
+	stream->data_pointer->request_args->buffer.used_size += added_size;
 	if (stream->data_ref == NULL) {
 		if (stream->data_pointer->request_args->on_write != NULL)
 			stream->data_pointer->request_args->on_write((void*)stream->temp_buffer, added_size,
@@ -66,7 +67,6 @@ size_t on_read_to_buffer(stream_parameters_t* stream, size_t added_size)
 	if (stream->data_pointer->request_args->on_write != NULL)
 		stream->data_pointer->request_args->on_write((void*)stream->data_ref, added_size,
 													 stream->data_pointer->request_args->write_argument);
-	stream->data_pointer->request_args->buffer.used_size += added_size;
 	stream->buffer_left -= added_size;
 	stream->data_ref += added_size;
 	if (stream->buffer_left <= 0)

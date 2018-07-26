@@ -93,7 +93,7 @@ lsquic_stream_ctx_t * http_client_on_new_stream (void* stream_if_ctx, lsquic_str
     free_stream->is_created = 1;
     free_stream->is_header_sent = 0;
     free_stream->is_closed = 0;
-    free_stream->used_header_buffer = 0;
+    free_stream->used_temp_buffer = 0;
     free_stream->header_info_ref = NULL;
     free_stream->is_read = 0;
     free_stream->stream_ref = stream;

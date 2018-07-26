@@ -47,8 +47,8 @@ typedef struct stream_parameters {
     int is_closed;
     int is_read;
 
-    char header_buffer[MAX_HTTP_HEADER_SIZE];
-    size_t used_header_buffer;
+    char temp_buffer[MAX_HTTP_HEADER_SIZE];
+    size_t used_temp_buffer;
     struct header_info* header_info_ref;
 
 } stream_parameters_t;

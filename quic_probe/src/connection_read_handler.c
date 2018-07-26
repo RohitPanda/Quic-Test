@@ -56,6 +56,12 @@ int check_end_sequence(char* data, size_t length, size_t* end_position)
 
 size_t on_read_to_buffer(stream_parameters_t* stream, size_t added_size)
 {
+	if (stream->data_ref == NULL) {
+		if (stream->data_pointer->request_args->on_write != NULL)
+			stream->data_pointer->request_args->on_write((void*)stream->temp_buffer, added_size,
+														 stream->data_pointer->request_args->write_argument);
+		return added_size;
+	}
 	// call request to notify on download_request
 	if (stream->data_pointer->request_args->on_write != NULL)
 		stream->data_pointer->request_args->on_write((void*)stream->data_ref, added_size,
@@ -75,17 +81,22 @@ size_t on_read_to_buffer(stream_parameters_t* stream, size_t added_size)
 
 size_t copy_header_remainder_to_buffer(stream_parameters_t* stream, size_t data_start_position)
 {
-	size_t added_size = stream->used_header_buffer - data_start_position;
+	size_t added_size = stream->used_temp_buffer - data_start_position;
 	if (added_size == 0)
 		return 0;
-	memcpy(stream->data_ref, stream->header_buffer + data_start_position, added_size);
+	if (stream->data_ref != NULL) {
+		memcpy(stream->data_ref, stream->temp_buffer + data_start_position, added_size);
+	} else {
+		memmove(stream->temp_buffer, stream->temp_buffer + data_start_position, added_size);
+	}
+
 	return on_read_to_buffer(stream, added_size);
 }
 
 size_t read_header(stream_parameters_t* stream)
 {
     // check if buffer was filled and it's required to fill it more with header
-    if (stream->used_header_buffer >= MAX_HTTP_HEADER_SIZE)
+    if (stream->used_temp_buffer >= MAX_HTTP_HEADER_SIZE)
     {
         report_stream_error(init_text_from_const("Buffer output overflow"), errno, stream,
                             init_text_from_const(__FILE__), __LINE__, QUIC_CLIENT_CODE_BUFFER_OVERFLOW);
@@ -93,22 +104,22 @@ size_t read_header(stream_parameters_t* stream)
         return -1;
     }
 
-	size_t prev_header_size = stream->used_header_buffer;
+	size_t prev_header_size = stream->used_temp_buffer;
 	uint possible_offset = MIN(END_HEADER_SIZE, prev_header_size);
-	ssize_t read_len = lsquic_stream_read(stream->stream_ref, (void*) (stream->header_buffer + prev_header_size),
-	        MIN(MAX_HTTP_HEADER_SIZE - stream->used_header_buffer, stream->data_pointer->request_args->max_write_size));
+	ssize_t read_len = lsquic_stream_read(stream->stream_ref, (void*) (stream->temp_buffer + prev_header_size),
+	        MIN(MAX_HTTP_HEADER_SIZE - stream->used_temp_buffer, stream->data_pointer->request_args->max_write_size));
 	if (read_len <= 0)
 	    return read_len;
 
-	stream->used_header_buffer += read_len;
+	stream->used_temp_buffer += read_len;
 
 	size_t header_len;
-	int is_header_ended = check_end_sequence(stream->header_buffer + prev_header_size - possible_offset,
+	int is_header_ended = check_end_sequence(stream->temp_buffer + prev_header_size - possible_offset,
 			read_len + possible_offset, &header_len) || (read_len == 0);
 	if (is_header_ended)
 	{
 		error_report_t* error_report = NULL;
-		stream->header_info_ref = get_response_header(stream->header_buffer, header_len, &error_report,
+		stream->header_info_ref = get_response_header(stream->temp_buffer, header_len, &error_report,
 				stream->data_pointer->request_args->header_only);
 		if (error_report != NULL)
 		{
@@ -128,17 +139,22 @@ size_t read_header(stream_parameters_t* stream)
 size_t read_data(stream_parameters_t *stream)
 {
 	// read until header is formed, rest data feed
-	if (stream->header_info_ref == NULL)
-	{
+	if (stream->header_info_ref == NULL) {
 		return read_header(stream);
-	} else
-	{
-		ssize_t nread = lsquic_stream_read(stream->stream_ref, (void*)stream->data_ref,
-				MIN(stream->buffer_left, stream->data_pointer->request_args->max_write_size));
-		if (nread <= 0)
-			return nread;
-		return on_read_to_buffer(stream, nread);
 	}
+
+	ssize_t nread;
+	if (stream->data_ref == NULL) {
+		nread = lsquic_stream_read(stream->stream_ref, (void*)stream->temp_buffer, MAX_HTTP_HEADER_SIZE);
+	} else {
+		nread = lsquic_stream_read(stream->stream_ref, (void*)stream->data_ref,
+				MIN(stream->buffer_left, stream->data_pointer->request_args->max_write_size));
+	}
+
+	if (nread <= 0)
+		return nread;
+	return on_read_to_buffer(stream, nread);
+
 }
 
 void fix_time(stream_parameters_t* stream_parameters)

@@ -245,11 +245,8 @@ int initialize_progress_url(struct download_request *request, videourl *url, str
 void reset_buffer(struct download_buffer* buffer, size_t required_size)
 {
 	buffer->used_size = 0;
-	if (buffer->allocated_size < required_size)
-	{
-		buffer->buffer = realloc(buffer->buffer, required_size);
-		buffer->allocated_size = required_size;
-	}
+    buffer->buffer = NULL;
+    buffer->allocated_size = 0;
 }
 
 void adjust_range(videourl* url_ref)
@@ -278,10 +275,10 @@ void load_streams(videourl url [], struct download_parameters* download_files_va
 			++(download_files_values->run);
 		/*Time to download more, check separately for each stream to decide how much to download. */
 		download_files_values->play_out_buffer_len = get_curr_playoutbuf_len_forstream(i);
-		if(download_files_values->play_out_buffer_len.tv_sec>metric.playout_buffer_seconds)
+		if(download_files_values->play_out_buffer_len.tv_sec > metric.playout_buffer_seconds)
 			continue;
 		size_t range_addition;
-		if((metric.playout_buffer_seconds - download_files_values->play_out_buffer_len.tv_sec)>=LEN_CHUNK_MINIMUM)
+		if((metric.playout_buffer_seconds - download_files_values->play_out_buffer_len.tv_sec) >= LEN_CHUNK_MINIMUM)
 			range_addition = url[i].bitrate*LEN_CHUNK_MINIMUM;
 		else
 			range_addition = url[i].bitrate*LEN_CHUNK_FETCH;

@@ -12,6 +12,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <limits.h>
+#include <bits/time.h>
+#include <time.h>
 
 #include "../include/quic_downloader.h"
 
@@ -34,7 +36,7 @@ void read_result(struct quic_engine_shell* client, const char* file_name, double
     if (result == NULL)
         return;
 
-    write_to_file(result->request_args->buffer.buffer, result->request_args->buffer.used_size, file_name);
+    //write_to_file(result->request_args->buffer.buffer, result->request_args->buffer.used_size, file_name);
 
 	if (result->error_code)
 	    printf("error: %s, url: %s\n", result->error_str, result->final_url.url_data);
@@ -55,15 +57,47 @@ void read_result(struct quic_engine_shell* client, const char* file_name, double
 #define BUFFER_SIZE 10 * 1024 * 1024
 #define QUIC_VERSION "Q039"
 
-int main()
+
+struct time_vals{
+    size_t downloaded_size;
+    size_t last_time;
+    struct timespec start_time;
+};
+
+size_t get_time_diff(struct timespec start_time) {
+    struct timespec now;
+    clock_gettime(CLOCK_MONOTONIC_RAW, &now);
+    size_t nano_secs;
+    if (start_time.tv_nsec > now.tv_nsec) {
+        nano_secs = now.tv_nsec + 1000000000L - start_time.tv_nsec;
+        now.tv_sec--;
+    } else
+        nano_secs = now.tv_nsec - start_time.tv_nsec;
+
+    return (now.tv_sec - start_time.tv_sec) * 1000000000L + nano_secs;
+}
+
+
+size_t write_callback(void* data, size_t size, void *userdata) {
+    struct time_vals* vals = (struct time_vals*)userdata;
+    size_t time_passed = get_time_diff(vals->start_time);
+    vals->downloaded_size += size;
+    if (time_passed != 0)
+        printf("%ld; %ld\n", time_passed, (long)(vals->downloaded_size / (time_passed / 1000000000.0)));
+    vals->last_time = time_passed;
+    return size;
+}
+
+
+int main(int argc, char **argv)
 {
-    uint ports[] = {3389, 3390, 3391};
+    uint ports[] = {3089, 3090, 3091};
 	quic_args quic_args_ref =
 	{
 		.is_ipv4 = 1,
 		.quic_ver_str = QUIC_VERSION,
 		.quic_ver_str_size = strlen(QUIC_VERSION),
-		.timeout_ms = 60000,
+		.timeout_ms = 60000 * 10,
 		.use_prev_conn_data = 0,
 		.local_port_numbers = ports,
         .port_count = sizeof(ports)/sizeof(*ports),
@@ -77,123 +111,45 @@ int main()
     if(is_created == -1)
         exit(-1);
     double total_time_s = 0;
-//    struct download_request download_requests4[2];
-//    download_requests4[0].url_request.url_data = "https://www.youtube.com";
-//    download_requests4[0].url_request.url_len = strlen(download_requests4[0].url_request.url_data);
-//    download_requests4[0].on_write = NULL;
-//
-//
-//    download_requests4[1].url_request.url_data = "https://www.youtube.com/watch?v=6LAH3qE73lE";
-//    download_requests4[1].url_request.url_len = strlen(download_requests4[1].url_request.url_data);
-//    download_requests4[1].on_write = NULL;
-//
-//
-//    download_requests4[0].buffer.buffer = malloc(BUFFER_SIZE);
-//    download_requests4[0].buffer.allocated_size = BUFFER_SIZE;
-//    download_requests4[0].buffer.used_size = 0;
-//
-//    download_requests4[1].buffer.buffer = malloc(BUFFER_SIZE);
-//    download_requests4[1].buffer.allocated_size = BUFFER_SIZE;
-//    download_requests4[1].buffer.used_size = 0;
-//
-//    start_downloading(quic_engine_ref, &download_requests4[0], 1);
-//    read_result(quic_engine_ref, "youtube_result.txt");
-//
-//    start_downloading(quic_engine_ref, &download_requests4[1], 1);
-//    read_result(quic_engine_ref, "youtube_result2.txt");
-//    //read_result(quic_engine_ref, "google_general.txt");
-//
-//    download_requests4[0].url_request.url_data = "https://www.youtube.com/watch?v=NMGDnPYopYQ3";
-//    download_requests4[0].url_request.url_len = strlen(download_requests4[0].url_request.url_data);
-//
-//    download_requests4[1].url_request.url_data = "https://www.youtube.com/watch?v=znUg17W526o";
-//    download_requests4[1].url_request.url_len = strlen(download_requests4[1].url_request.url_data);
-//
-//    download_requests4[0].buffer.used_size = 0;
-//    download_requests4[1].buffer.used_size = 0;
-//
-//    start_downloading(quic_engine_ref, &download_requests4[0], 1);
-//    read_result(quic_engine_ref, "youtube_result3.txt");
-//
-//    start_downloading(quic_engine_ref, &download_requests4[1], 1);
-//    read_result(quic_engine_ref, "youtube_result4.txt");
-//    //read_result(quic_engine_ref, "google_general.txt");
-//
-//    free(download_requests4[0].buffer.buffer);
-//    free(download_requests4[1].buffer.buffer);
-//
-//    struct download_request download_requests3[1];
-//    download_requests3[0].url_request.url_data = "http://google.com";
-//    download_requests3[0].url_request.url_len = strlen(download_requests3[0].url_request.url_data);
-//    download_requests3[0].on_write = NULL;
-//
-//
-//    download_requests3[0].buffer.buffer = malloc(BUFFER_SIZE);
-//    download_requests3[0].buffer.allocated_size = BUFFER_SIZE;
-//    download_requests3[0].buffer.used_size = 0;
-//
-//    start_downloading(quic_engine_ref, download_requests3, 1);
-//
-//    read_result(quic_engine_ref, "single_result.txt");
-//
-//    free(download_requests3[0].buffer.buffer);
-//
-//	struct download_request download_requests[2];
-//	download_requests[0].url_request.url_data = "https://www.youtube.com/watch?v=rjp-JZif59M";
-//	download_requests[0].url_request.url_len = strlen(download_requests[0].url_request.url_data);
-//    download_requests[0].on_write = NULL;
-//
-//	// test redirect feature last p is wrong url
-//	download_requests[1].url_request.url_data = "https://www.youtube.com/watch?v=3xmH2GxduTAp";
-//	download_requests[1].url_request.url_len = strlen(download_requests[1].url_request.url_data);
-//    download_requests[1].on_write = NULL;
-//
-//
-//	download_requests[0].buffer.buffer = malloc(BUFFER_SIZE);
-//	download_requests[0].buffer.allocated_size = BUFFER_SIZE;
-//	download_requests[0].buffer.used_size = 0;
-//	download_requests[1].buffer.buffer = malloc(BUFFER_SIZE);
-//	download_requests[1].buffer.allocated_size = BUFFER_SIZE;
-//	download_requests[1].buffer.used_size = 0;
-//
-//    start_downloading(quic_engine_ref, download_requests, 2);
-//
-//    read_result(quic_engine_ref, "youtube_result5.txt");
-//	read_result(quic_engine_ref, "youtube_result6.txt");
-//
-//    free(download_requests[0].buffer.buffer);
-//    free(download_requests[1].buffer.buffer);
+
     int times = 1;
 
     for(int i = 0; i < times; i++)
     {
+        struct time_vals vals = {
+                .last_time = 0,
+                .downloaded_size = 0
+        };
+
         struct download_request download_requests2[2];
-        download_requests2[0].url_request.url_data = "https://r2---sn-4g5e6nzs.googlevideo.com/videoplayback?expire=1531494749&mime=video%2Fmp4&pl=32&sparams=dur,ei,gcr,id,initcwndbps,ip,ipbits,itag,lmt,mime,mm,mn,ms,mv,pl,ratebypass,requiressl,source,expire&initcwndbps=1490000&itag=22&ms=au,onr&mt=1531473045&mv=m&mm=31,26&mn=sn-4g5e6nzs,sn-i5heen7l&id=o-AJENPDwm0WTtBrhGohuRFkg0mpX1rqKSRkNTWcJYn74o&fexp=23709359,23745105&c=WEB&gcr=de&ipbits=0&requiressl=yes&fvip=2&key=yt6&lmt=1525582163023311&source=youtube&ratebypass=yes&dur=244.900&ei=_GxIW9WINp7-1wKEtJyQBQ&ip=2001%3A4ca0%3A2003%3A1920%3A707f%3Aaba2%3A6761%3Aeb07";
+        download_requests2[0].url_request.url_data = argv[1];
         download_requests2[0].url_request.url_len = strlen(download_requests2[0].url_request.url_data);
-        download_requests2[0].on_write = NULL;
-        download_requests2[0].header_only = 1;
+        download_requests2[0].on_write = write_callback;
+        download_requests2[0].write_argument = &vals;
+        download_requests2[0].header_only = 0;
 
         // test timeout
-        download_requests2[1].url_request.url_data = "http://www.google.com";
-        download_requests2[1].url_request.url_len = strlen(download_requests2[1].url_request.url_data);
-        download_requests2[1].on_write = NULL;
-        download_requests2[1].header_only = 0;
+//        download_requests2[1].url_request.url_data = "http://www.google.com";
+//        download_requests2[1].url_request.url_len = strlen(download_requests2[1].url_request.url_data);
+//        download_requests2[1].on_write = NULL;
+//        download_requests2[1].header_only = 0;
 
 
         download_requests2[0].buffer.buffer = NULL;
         download_requests2[0].buffer.allocated_size = 0;
         download_requests2[0].buffer.used_size = 0;
-        download_requests2[1].buffer.buffer = malloc(BUFFER_SIZE);
-        download_requests2[1].buffer.allocated_size = BUFFER_SIZE;
-        download_requests2[1].buffer.used_size = 0;
+//        download_requests2[1].buffer.buffer = malloc(BUFFER_SIZE);
+//        download_requests2[1].buffer.allocated_size = BUFFER_SIZE;
+//        download_requests2[1].buffer.used_size = 0;
 
         start_downloading(quic_engine_ref, download_requests2, 1);
+        clock_gettime(CLOCK_MONOTONIC, &vals.start_time);
 
         read_result(quic_engine_ref, "video_quic.txt", &total_time_s);
         //read_result(quic_engine_ref, "audio_quic.txt", &total_time_s);
 
-        free(download_requests2[0].buffer.buffer);
-        free(download_requests2[1].buffer.buffer);
+//        free(download_requests2[0].buffer.buffer);
+//        free(download_requests2[1].buffer.buffer);
     }
 
     destroy_client(quic_engine_ref);

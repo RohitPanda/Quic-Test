@@ -81,7 +81,7 @@ wget "https://ffmpeg.org/releases/ffmpeg-${FFMPEG_VERSION}.tar.gz"|| exit -1
 tar -xf ffmpeg-${FFMPEG_VERSION}.tar.gz
 cd ffmpeg-${FFMPEG_VERSION}
 mkdir -p build
-./configure --enable-shared --disable-static --prefix=/ --libdir=/lib --disable-all --enable-avformat --enable-avcodec --enable-avutil --enable-demuxer=mov --enable-demuxer=matroska --enable-demuxer=flv --disable-debug --enable-lto --enable-small --disable-zlib --disable-bzlib --disable-pthreads --enable-protocol=file
+./configure --disable-shared --prefix=/ --libdir=/lib --disable-all --enable-avformat --enable-avcodec --enable-avutil --enable-demuxer=mov --enable-demuxer=matroska --enable-demuxer=flv --disable-debug --enable-lto --enable-small --disable-zlib --disable-bzlib --disable-pthreads --enable-protocol=file
 make install DESTDIR=$PWD/build/
 cd ..
 
@@ -108,6 +108,14 @@ cd lsquic-client
 cmake -DBORINGSSL_INCLUDE=$BORINGSSL_SOURCE/include \
                                 -DBORINGSSL_LIB=$BORINGSSL_SOURCE/lib .
 make
+cd ..
+
+wget "https://www.caida.org/tools/measurement/scamper/code/scamper-cvs-20180504.tar.gz"|| exit -1
+tar -xzf scamper-cvs-20180504.tar.gz
+cd scamper-cvs-20180504
+mkdir -p build
+./configure --prefix=/
+make install DESTDIR=$PWD/build/
 cd ..
 
 cd ..

@@ -41,6 +41,8 @@ int start_downloading(quic_engine_parameters* engine_ref, struct download_reques
         clock_gettime(CLOCK_MONOTONIC_RAW, &time_now);
         charge_request(engine_ref, &requests[i], url, time_now);
     }
+    // process packets before and refresh engine to load with new request
+    lsquic_engine_process_conns(engine_ref->engine_ref);
     schedule_engine(engine_ref);
     return 0;
 }

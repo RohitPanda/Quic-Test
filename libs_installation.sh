@@ -93,13 +93,9 @@ if [ "" == "$PKG_OK" ]; then
   tar -xf libevent-2.1.8-stable.tar.gz
 
   cd libevent-2.1.8-stable
-  ./configure --enable-shared=0 --prefix $PWD/build
+  ./configure --enable-shared=0
   make
-  make install
-  C_INCLUDE_PATH=$PWD/build/include:$C_INCLUDE_PATH
-  LIBRARY_PATH=$PWD/build/lib:$LIBRARY_PATH
-  export C_INCLUDE_PATH
-  export LIBRARY_PATH
+  sudo make install
   cd ..
 fi
 
@@ -114,8 +110,9 @@ wget "https://www.caida.org/tools/measurement/scamper/code/scamper-cvs-20180504.
 tar -xzf scamper-cvs-20180504.tar.gz
 cd scamper-cvs-20180504
 mkdir -p build
-./configure --prefix=/
-make install DESTDIR=$PWD/build/
+./configure
+make
+sudo make install
 cd ..
 
 cd ..

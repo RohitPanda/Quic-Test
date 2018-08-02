@@ -64,13 +64,9 @@
 #define LEN_PLAYOUT_BUFFER 40 /*Length of the playout buffer in seconds*/
 #define LEN_CHUNK_FETCH 1 /*Length to be requested to refill buffer*/
 
-
-
 #define NUMOFSTREAMS 2
 #define STREAM_VIDEO 0
 #define STREAM_AUDIO 1
-
-
 
 #define NUMOFCODES 9
 #define MIN_PREBUFFER 2000 /* in millisecond*/

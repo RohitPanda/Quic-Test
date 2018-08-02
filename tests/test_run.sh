@@ -2,8 +2,6 @@
 PORTS="3089,3090,3091"
 MAX_TIME_ARG="--maxtime 180"
 
-PATH="$PWD/../build/scamper-cvs-20180504/build/bin:$PATH"
-
 VIDEO_ID="$(head -1 top_list.txt)"
 
 if [[ "$VIDEO_ID" == "" ]]; then
@@ -47,13 +45,11 @@ done
 mkdir -p results
 if [[ $TEST_RESULT_4 == *"YOUTUBE"* ]]; then
   echo $TEST_RESULT_4>>results/tcp4results.txt
-  TIMESTAMP="$(echo $TEST_RESULT_4 | cut -d ';' -f 2)"
-  echo "$TEST_RESULT_4" | cut -d ';' --output-delimiter $'\n' -f 19,29 | uniq | while read -r a; do scamper -O warts -i $a | sc_warts2csv | tail -n +2 | cut -f 9,10 -d ';'| paste -sd ";" | awk -v ts="$TIMESTAMP" '{print ts";"$1}' >> results/tcp4route.txt ; done
+  bash print_route.sh $TEST_RESULT_4 results/tcp4route.txt
 fi
 if [[ $TEST_RESULT_6 == *"YOUTUBE"* ]]; then
   echo $TEST_RESULT_6>>results/tcp6results.txt
-  TIMESTAMP="$(echo $TEST_RESULT_6 | cut -d ';' -f 2)"
-  echo "$TEST_RESULT_6" | cut -d ';' --output-delimiter $'\n' -f 19,29 | uniq | while read -r a; do scamper -O warts -i $a | sc_warts2csv | tail -n +2 | cut -f 9,10 -d ';'| paste -sd ";" | awk -v ts="$TIMESTAMP" '{print ts";"$1}' >> results/tcp6route.txt ; done
+  bash print_route.sh $TEST_RESULT_6 results/tcp6route.txt
 fi
 
 ARGS="https://www.youtube.com/watch?v=$VIDEO_ID -4 --p $PORTS --qver Q035 $MAX_TIME_ARG"
@@ -63,8 +59,7 @@ if [[ $TEST_RESULT_4 != *"YOUTUBE"* ]]; then
 fi
 if [[ $TEST_RESULT_4 == *"YOUTUBE"* ]]; then
   echo "$TEST_RESULT_4" >> results/ip4quic35results.txt 
-  TIMESTAMP="$(echo $TEST_RESULT_4 | cut -d ';' -f 2)"
-  echo "$TEST_RESULT_4" | cut -d ';' --output-delimiter $'\n' -f 19,29 | uniq | while read -r a; do scamper -O warts -i $a | sc_warts2csv | tail -n +2 | cut -f 9,10 -d ';'| paste -sd ";" | awk -v ts="$TIMESTAMP" '{print ts";"$1}' >> results/ip4quic35route.txt ; done
+  bash print_route.sh $TEST_RESULT_4 results/ip4quic35route.txt
 fi
 
 
@@ -75,8 +70,7 @@ if [[ $TEST_RESULT_4 != *"YOUTUBE"* ]]; then
 fi
 if [[ $TEST_RESULT_4 == *"YOUTUBE"* ]]; then
   echo "$TEST_RESULT_4" >> results/ip4quic39results.txt 
-  TIMESTAMP="$(echo $TEST_RESULT_4 | cut -d ';' -f 2)"
-  echo "$TEST_RESULT_4" | cut -d ';' --output-delimiter $'\n' -f 19,29 | uniq | while read -r a; do scamper -O warts -i $a | sc_warts2csv | tail -n +2 | cut -f 9,10 -d ';'| paste -sd ";" | awk -v ts="$TIMESTAMP" '{print ts";"$1}' >> results/ip4quic39route.txt ; done
+  bash print_route.sh $TEST_RESULT_4 results/ip4quic39route.txt
 fi
 
 ARGS="https://www.youtube.com/watch?v=$VIDEO_ID -4 --p $PORTS --qver Q043 $MAX_TIME_ARG"
@@ -86,8 +80,7 @@ if [[ $TEST_RESULT_4 != *"YOUTUBE"* ]]; then
 fi
 if [[ $TEST_RESULT_4 == *"YOUTUBE"* ]]; then
   echo "$TEST_RESULT_4" >> results/ip4quic43results.txt 
-  TIMESTAMP="$(echo $TEST_RESULT_4 | cut -d ';' -f 2)"
-  echo "$TEST_RESULT_4" | cut -d ';' --output-delimiter $'\n' -f 19,29 | uniq | while read -r a; do scamper -O warts -i $a | sc_warts2csv | tail -n +2 | cut -f 9,10 -d ';'| paste -sd ";" | awk -v ts="$TIMESTAMP" '{print ts";"$1}' >> results/ip4quic43route.txt ; done
+  bash print_route.sh $TEST_RESULT_4 results/ip4quic43route.txt
 fi
 
 ARGS="https://www.youtube.com/watch?v=$VIDEO_ID -6 --p $PORTS --qver Q035 $MAX_TIME_ARG"
@@ -97,8 +90,7 @@ if [[ $TEST_RESULT_6 != *"YOUTUBE"* ]]; then
 fi
 if [[ $TEST_RESULT_6 == *"YOUTUBE"* ]]; then
   echo "$TEST_RESULT_6" >> results/ip6quic35results.txt 
-  TIMESTAMP="$(echo $TEST_RESULT_6 | cut -d ';' -f 2)"
-  echo "$TEST_RESULT_6" | cut -d ';' --output-delimiter $'\n' -f 19,29 | uniq | while read -r a; do scamper -O warts -i $a | sc_warts2csv | tail -n +2 | cut -f 9,10 -d ';'| paste -sd ";" | awk -v ts="$TIMESTAMP" '{print ts";"$1}' >> results/ip6quic35route.txt ; done
+  bash print_route.sh $TEST_RESULT_6 results/ip6quic35route.txt
 fi
 
 ARGS="https://www.youtube.com/watch?v=$VIDEO_ID -6 --p $PORTS --qver Q039 $MAX_TIME_ARG"
@@ -108,8 +100,7 @@ if [[ $TEST_RESULT_6 != *"YOUTUBE"* ]]; then
 fi
 if [[ $TEST_RESULT_6 == *"YOUTUBE"* ]]; then
   echo "$TEST_RESULT_6" >> results/ip6quic39results.txt 
-  TIMESTAMP="$(echo $TEST_RESULT_6 | cut -d ';' -f 2)"
-  echo "$TEST_RESULT_6" | cut -d ';' --output-delimiter $'\n' -f 19,29 | uniq | while read -r a; do scamper -O warts -i $a | sc_warts2csv | tail -n +2 | cut -f 9,10 -d ';'| paste -sd ";" | awk -v ts="$TIMESTAMP" '{print ts";"$1}' >> results/ip6quic39route.txt ; done
+  bash print_route.sh $TEST_RESULT_6 results/ip6quic39route.txt
 fi
 
 ARGS="https://www.youtube.com/watch?v=$VIDEO_ID -6 --p $PORTS --qver Q043 $MAX_TIME_ARG"
@@ -119,7 +110,5 @@ if [[ $TEST_RESULT_6 != *"YOUTUBE"* ]]; then
 fi
 if [[ $TEST_RESULT_6 == *"YOUTUBE"* ]]; then
   echo "$TEST_RESULT_6" >> results/ip6quic43results.txt 
-  TIMESTAMP="$(echo $TEST_RESULT_6 | cut -d ';' -f 2)"
-  echo "$TEST_RESULT_6" | cut -d ';' --output-delimiter $'\n' -f 19,29 | uniq | while read -r a; do scamper -O warts -i $a | sc_warts2csv | tail -n +2 | cut -f 9,10 -d ';'| paste -sd ";" | awk -v ts="$TIMESTAMP" '{print ts";"$1}' >> results/ip6quic43route.txt ; done
+  bash print_route.sh $TEST_RESULT_6 results/ip6quic43route.txt
 fi
-

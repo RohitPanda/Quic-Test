@@ -3,13 +3,19 @@ project(youtube_tcp_test)
 
 set(CMAKE_C_STANDARD 11)
 
-include_directories(../build/boringssl/include src)
-include_directories(../build/curl-7.58.0/build/include src)
-include_directories(../build/ffmpeg-4.0/build/include src)
+set(LIB_DIR  ${CMAKE_CURRENT_LIST_DIR}/../build)
 
-link_directories(../build/boringssl/lib)
-link_directories(../build/curl-7.58.0/build/lib)
-link_directories(../build/ffmpeg-4.0/build/lib)
+include_directories(${LIB_DIR}/boringssl/include src)
+include_directories(${LIB_DIR}/curl-7.58.0/build/include src)
+include_directories(${LIB_DIR}/ffmpeg-4.0/build/include src)
+
+find_library(AVFORMAT avformat HINTS ${LIB_DIR}/ffmpeg-4.0/build/lib REQUIRED)
+find_library(AVCODEC avcodec HINTS ${LIB_DIR}/ffmpeg-4.0/build/lib REQUIRED)
+find_library(AVUTIL avutil HINTS ${LIB_DIR}/ffmpeg-4.0/build/lib REQUIRED)
+find_library(SSL ssl HINTS ${LIB_DIR}/boringssl/lib REQUIRED)
+find_library(CRYPTO crypto HINTS ${LIB_DIR}/boringssl/lib REQUIRED)
+find_library(CURL curl HINTS ${LIB_DIR}/curl-7.58.0/build/lib REQUIRED)
+
 
 add_executable(youtube_tcp_test
         src/adaptive.c
@@ -25,4 +31,4 @@ add_executable(youtube_tcp_test
         src/network_addresses.c
         src/network_addresses.h)
 
-target_link_libraries(youtube_tcp_test curl avformat avcodec avutil ssl crypto z m pthread dl)
+target_link_libraries(youtube_tcp_test ${CURL} ${AVFORMAT} ${AVCODEC} ${AVUTIL} ${SSL} ${CRYPTO} z m pthread dl)

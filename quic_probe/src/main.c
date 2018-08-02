@@ -35,7 +35,7 @@ void read_result(struct quic_engine_shell* client, const char* file_name, double
 
     if (result == NULL)
         return;
-
+    printf("Speed:%ld\n", (size_t)(result->request_args->buffer.used_size / (result->download_time.tv_sec + result->download_time.tv_nsec / 1000000000.0)));
     //write_to_file(result->request_args->buffer.buffer, result->request_args->buffer.used_size, file_name);
 
 	if (result->error_code)
@@ -94,7 +94,7 @@ int main(int argc, char **argv)
     uint ports[] = {3089, 3090, 3091};
 	quic_args quic_args_ref =
 	{
-		.is_ipv4 = 1,
+		.is_ipv4 = 0,
 		.quic_ver_str = QUIC_VERSION,
 		.quic_ver_str_size = strlen(QUIC_VERSION),
 		.timeout_ms = 60000 * 10,
@@ -112,7 +112,7 @@ int main(int argc, char **argv)
         exit(-1);
     double total_time_s = 0;
 
-    int times = 1;
+    int times = 10;
 
     for(int i = 0; i < times; i++)
     {

@@ -2,20 +2,26 @@ cmake_minimum_required(VERSION 3.10)
 project(youtube_test)
 
 set(CMAKE_C_STANDARD 11)
-set(LSQUIC_CLIENT_LIBS quic_client lsquic event pthread ssl crypto z m)
-set(GENERAL_LIBS ${LSQUIC_CLIENT_LIBS})
-set(LOCAL_LIBS avformat avcodec avutil)
+set(LIB_DIR  ${CMAKE_CURRENT_LIST_DIR}/../build)
 
-include_directories(../build/ffmpeg-4.0/build/include src)
-include_directories(../build/boringssl/include src)
-include_directories(../build/lsquic-client/include src)
+find_library(AVFORMAT avformat HINTS ${LIB_DIR}/ffmpeg-4.0/build/lib REQUIRED)
+find_library(AVCODEC avcodec HINTS ${LIB_DIR}/ffmpeg-4.0/build/lib REQUIRED)
+find_library(AVUTIL avutil HINTS ${LIB_DIR}/ffmpeg-4.0/build/lib REQUIRED)
+find_library(SSL ssl HINTS ${LIB_DIR}/boringssl/lib REQUIRED)
+find_library(CRYPTO crypto HINTS ${LIB_DIR}/boringssl/lib REQUIRED)
+
+find_library(LSQUIC lsquic HINTS ${LIB_DIR}/lsquic-client/src/liblsquic REQUIRED)
+find_library(QUIC_CLIENT quic_client HINTS ../quic_probe REQUIRED)
+find_library(EVENT libevent.a REQUIRED)
+
+set(FFMPEG_LIBS ${AVFORMAT} ${AVCODEC} ${AVUTIL})
+set(ENCRYPTION_LIB ${SSL} ${CRYPTO})
+set(QUIC_LIB ${QUIC_CLIENT} ${LSQUIC})
+
+include_directories(${LIB_DIR}/ffmpeg-4.0/build/include src)
+include_directories(${LIB_DIR}/boringssl/include src)
+include_directories(${LIB_DIR}/lsquic-client/include src)
 include_directories(../quic_probe/include src)
-
-link_directories(../build/boringssl/lib)
-link_directories(../build/lsquic-client/src/liblsquic)
-link_directories(../build/ffmpeg-4.0/build/lib)
-link_directories(../quic_probe)
-link_directories(../build/libevent-2.1.8-stable/build/lib)
 
 add_executable(youtube_test
         src/adaptive.c
@@ -32,4 +38,5 @@ add_executable(youtube_test
         src/network_addresses.h
         src/timespec_convertor.c
         src/timespec_convertor.h)
-target_link_libraries(youtube_test ${LOCAL_LIBS} ${GENERAL_LIBS} )
+
+target_link_libraries(youtube_test ${AVFORMAT} ${AVCODEC} ${AVUTIL} ${QUIC_CLIENT} ${LSQUIC} ${EVENT} pthread ${SSL} ${CRYPTO} z m )

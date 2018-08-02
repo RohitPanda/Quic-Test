@@ -3,6 +3,7 @@ project(quic_probe)
 set(CMAKE_C_STANDARD 11)
 
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -Wno-unused-parameter")
+set(LIB_DIR  ${CMAKE_CURRENT_LIST_DIR}/../build)
 
 set(GENERAL_SOURCES
         src/address_finder.c
@@ -47,18 +48,21 @@ set(GENERAL_SOURCES
         src/mono_parser.h
         src/timedifference.c
         src/timedifference.h src/queue.c src/queue.h)
-set(GENERAL_LIBS lsquic event pthread ssl crypto z m)
 
 include_directories(src)
 include_directories(src/test)
 include_directories(include)
 include_directories(../build/lsquic-client/include)
 include_directories(../build/boringssl/include)
-include_directories(../build/libevent-2.1.8-stable/build/include)
 
-link_directories("../build/lsquic-client/src/liblsquic")
-link_directories("../build/boringssl/lib")
-link_directories("../build/libevent-2.1.8-stable/build/lib")
+find_library(SSL ssl HINTS ${LIB_DIR}/boringssl/lib REQUIRED)
+find_library(CRYPTO crypto HINTS ${LIB_DIR}/boringssl/lib REQUIRED)
+find_library(LSQUIC lsquic HINTS ${LIB_DIR}/lsquic-client/src/liblsquic REQUIRED)
+find_library(EVENT libevent.a REQUIRED)
+
+message(${EVENT})
+
+set(GENERAL_LIBS ${LSQUIC} ${EVENT} pthread ${SSL} ${CRYPTO} z m)
 
 ##create a library
 

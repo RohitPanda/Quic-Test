@@ -21,13 +21,11 @@
 
 #include <sys/select.h>
 #include <sys/param.h>
-
 #include "download_ops.h"
 #include "helper.h"
 #include "metrics.h"
 #include "mm_parser.h"
 #include "youtube-dl.h"
-#include "coro.h"
 #include "attributes.h"
 #include "timespec_convertor.h"
 
@@ -45,14 +43,12 @@ static size_t write_data(void *ptr, size_t size, void *userdata) {
 	/* Tell the coroutines there is new data */
 	if(!p->init) {
 		p->init = true;
-
-		coro_stack_alloc(&p->parser_stack, 0);
-		coro_create(&p->parser_coro, mm_parser, p, p->parser_stack.sptr, p->parser_stack.ssze);
-
-		coro_transfer(&corou_main, &p->parser_coro);
+        sem_init(&p->ffmpeg_awaits_mutex, 0, 0);
+        sem_init(&p->data_arrived_mutex, 0, 0);
+        pthread_create(&p->ffmpeg_thread, NULL, mm_parser, p);
 	}
-
-	coro_transfer(&corou_main, &p->parser_coro);
+    sem_post(&p->data_arrived_mutex);
+    sem_wait(&p->ffmpeg_awaits_mutex);
 	return size;
 }
 
@@ -137,14 +133,17 @@ static int process_output(struct myprogress *prog, struct output_data *download_
 	return 1;
 }
 
+static void free_ffmpeg_threads(struct myprogress * prog){
+	for(int i = 0; i < metric.numofstreams; i++){
+		prog[i].mm_parser_buffer = NULL;
+		prog[i].bytes_avail = 0;
+		sem_post(&prog[i].data_arrived_mutex);
+	}
+}
+
 static int cleanup_download_loop(struct myprogress *prog, int num, int errorcode, int last_http_code)
 {
-	coro_destroy(&prog[0].parser_coro);
-	coro_stack_free(&prog[0].parser_stack);
-	if(metric.numofstreams > 1) {
-		coro_destroy(&prog[1].parser_coro);
-		coro_stack_free(&prog[1].parser_stack);
-	}
+	free_ffmpeg_threads(prog);
 
 	metric.etime = gettimelong();
 	for(int j =0; j<num; j++)

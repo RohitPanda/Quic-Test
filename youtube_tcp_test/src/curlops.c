@@ -24,7 +24,6 @@
 #include "metrics.h"
 #include "mm_parser.h"
 #include "youtube-dl.h"
-#include "coro.h"
 #include "attributes.h"
 #include <sys/select.h>
 
@@ -43,29 +42,14 @@ static size_t write_data(void *ptr, size_t size, size_t nmemb, void *userdata) {
 	p->curl_buffer = (uint8_t*)ptr;
 	p->bytes_avail = len;
 	/* Tell the coroutines there is new data */
-	if(p->stream == STREAM_VIDEO) {
-		if(!p->init) {
-			p->init = true;
-
-			coro_stack_alloc(&p->parser_stack, 0);
-			coro_create(&p->parser_coro, mm_parser, p, p->parser_stack.sptr, p->parser_stack.ssze);
-
-			coro_transfer(&corou_main, &p->parser_coro);
-		}
-
-		coro_transfer(&corou_main, &p->parser_coro);
-	} else if(p->stream == STREAM_AUDIO) {
-		if(!p->init) {
-			p->init = true;
-
-			coro_stack_alloc(&p->parser_stack, 0);
-			coro_create(&p->parser_coro, mm_parser, p, p->parser_stack.sptr, p->parser_stack.ssze);
-
-			coro_transfer(&corou_main, &p->parser_coro);
-		}
-
-		coro_transfer(&corou_main, &p->parser_coro);
+	if(!p->init) {
+		p->init = true;
+		sem_init(&p->ffmpeg_awaits_mutex, 0, 0);
+		sem_init(&p->data_arrived_mutex, 0, 0);
+		pthread_create(&p->ffmpeg_thread, NULL, mm_parser, p);
 	}
+	sem_post(&p->data_arrived_mutex);
+	sem_wait(&p->ffmpeg_awaits_mutex);
 	return len;
 }
 
@@ -189,15 +173,18 @@ static int update_curl_progress(struct myprogress * prog, CURL *http_handle[], i
 
 }
 
+static void free_ffmpeg_threads(struct myprogress * prog){
+	for(int i = 0; i < metric.numofstreams; i++){
+		prog[i].curl_buffer = NULL;
+		prog[i].bytes_avail = 0;
+		sem_post(&prog[i].data_arrived_mutex);
+	}
+}
+
 static int my_curl_cleanup(struct myprogress * prog, CURLM * multi_handle, CURL *http_handle[], int num, int errorcode,
 		videourl url [])
 {
-	coro_destroy(&prog[0].parser_coro);
-	coro_stack_free(&prog[0].parser_stack);
-	if(metric.numofstreams > 1) {
-		coro_destroy(&prog[1].parser_coro);
-		coro_stack_free(&prog[1].parser_stack);
-	}
+	free_ffmpeg_threads(prog);
 
 	metric.etime = gettimelong();
 	long http_code;
@@ -595,8 +582,7 @@ int downloadfiles(videourl url [] )
 	}
 	download_files_values.prog = malloc(sizeof(struct myprogress [metric.numofstreams]));
 	metric.stime = gettimelong();
-	while(download_files_values.run)
-	{
+	while(download_files_values.run) {
 		download_files_values.run = 0;
 		/*Previous transfers have finished, figure out if we have enough space in the buffer to download 
 		  more or should we wait while the buffer empties */

@@ -8,6 +8,7 @@ set(LIB_DIR  ${CMAKE_CURRENT_LIST_DIR}/../build)
 include_directories(${LIB_DIR}/boringssl/include src)
 include_directories(${LIB_DIR}/curl-7.58.0/build/include src)
 include_directories(${LIB_DIR}/ffmpeg-4.0/build/include src)
+include_directories(${LIB_DIR}/libtask src)
 
 find_library(AVFORMAT avformat HINTS ${LIB_DIR}/ffmpeg-4.0/build/lib REQUIRED)
 find_library(AVCODEC avcodec HINTS ${LIB_DIR}/ffmpeg-4.0/build/lib REQUIRED)
@@ -19,7 +20,6 @@ find_library(CURL curl HINTS ${LIB_DIR}/curl-7.58.0/build/lib REQUIRED)
 
 add_executable(youtube_tcp_test
         src/adaptive.c
-        src/coro.c
         src/curlops.c
         src/getinfo.c
         src/helper.c

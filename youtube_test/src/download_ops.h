@@ -23,15 +23,16 @@
 #define DOWNLOAD_OPTS_H_
 
 #include "youtube-dl.h"
-#include "coro.h"
+#include <semaphore.h>
 
 struct myprogress {
   int stream;
   struct timespec last_run_time;
   struct {
 	  bool init;
-	  coro_context parser_coro;
-	  struct coro_stack parser_stack;
+	  pthread_t ffmpeg_thread;
+	  sem_t data_arrived_mutex;
+	  sem_t ffmpeg_awaits_mutex;
 	  uint8_t *mm_parser_buffer;
 	  size_t bytes_avail;
 	  size_t max_size;

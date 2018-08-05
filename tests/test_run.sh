@@ -9,13 +9,13 @@ if [[ "$VIDEO_ID" == "" ]]; then
   exit -1
 fi 
 
-ARGS="https://www.youtube.com/watch?v=$VIDEO_ID -4 $MAX_TIME_ARG"
+ARGS="-4 $MAX_TIME_ARG https://www.youtube.com/watch?v=$VIDEO_ID"
 TEST_RESULT_4="$(./youtube_tcp_test $ARGS)"
 if [[ "$TEST_RESULT_4" != *"YOUTUBE"* ]]; then
   TEST_RESULT_4="$(./youtube_tcp_test $ARGS)"
 fi
 
-ARGS="https://www.youtube.com/watch?v=$VIDEO_ID -6 $MAX_TIME_ARG"
+ARGS="-6 $MAX_TIME_ARG https://www.youtube.com/watch?v=$VIDEO_ID"
 TEST_RESULT_6="$(./youtube_tcp_test $ARGS)"
 if [[ "$TEST_RESULT_6" != *"YOUTUBE"* ]]; then
   TEST_RESULT_6="$(./youtube_tcp_test $ARGS)"
@@ -33,9 +33,9 @@ do
     exit -1
   fi
 
-  ARGS="https://www.youtube.com/watch?v=$VIDEO_ID -4 $MAX_TIME_ARG"
+  ARGS="-4 $MAX_TIME_ARG https://www.youtube.com/watch?v=$VIDEO_ID"
   TEST_RESULT_4="$(./youtube_tcp_test $ARGS)"
-  ARGS="https://www.youtube.com/watch?v=$VIDEO_ID -6 $MAX_TIME_ARG"
+  ARGS="-6 $MAX_TIME_ARG https://www.youtube.com/watch?v=$VIDEO_ID "
   TEST_RESULT_6="$(./youtube_tcp_test $ARGS)"
 
   ERROR_GREP="$(grep -o ';621;$' <<< $TEST_RESULT_4)"
@@ -52,7 +52,7 @@ if [[ $TEST_RESULT_6 == *"YOUTUBE"* ]]; then
   bash print_route.sh $TEST_RESULT_6 results/tcp6route.txt
 fi
 
-ARGS="https://www.youtube.com/watch?v=$VIDEO_ID -4 --p $PORTS --qver Q035 $MAX_TIME_ARG"
+ARGS="-4 --p $PORTS --qver Q035 $MAX_TIME_ARG https://www.youtube.com/watch?v=$VIDEO_ID"
 TEST_RESULT_4="$(./youtube_test $ARGS)"
 if [[ $TEST_RESULT_4 != *"YOUTUBE"* ]]; then
   TEST_RESULT_4="$(./youtube_test $ARGS)"
@@ -63,7 +63,7 @@ if [[ $TEST_RESULT_4 == *"YOUTUBE"* ]]; then
 fi
 
 
-ARGS="https://www.youtube.com/watch?v=$VIDEO_ID -4 --p $PORTS --qver Q039 $MAX_TIME_ARG"
+ARGS="-4 --p $PORTS --qver Q039 $MAX_TIME_ARG https://www.youtube.com/watch?v=$VIDEO_ID "
 TEST_RESULT_4="$(./youtube_test $ARGS)"
 if [[ $TEST_RESULT_4 != *"YOUTUBE"* ]]; then
   TEST_RESULT_4="$(./youtube_test $ARGS)"
@@ -73,7 +73,7 @@ if [[ $TEST_RESULT_4 == *"YOUTUBE"* ]]; then
   bash print_route.sh $TEST_RESULT_4 results/ip4quic39route.txt
 fi
 
-ARGS="https://www.youtube.com/watch?v=$VIDEO_ID -4 --p $PORTS --qver Q043 $MAX_TIME_ARG"
+ARGS="-4 --p $PORTS --qver Q043 $MAX_TIME_ARG https://www.youtube.com/watch?v=$VIDEO_ID "
 TEST_RESULT_4="$(./youtube_test $ARGS)"
 if [[ $TEST_RESULT_4 != *"YOUTUBE"* ]]; then
   TEST_RESULT_4="$(./youtube_test $ARGS)"
@@ -83,7 +83,7 @@ if [[ $TEST_RESULT_4 == *"YOUTUBE"* ]]; then
   bash print_route.sh $TEST_RESULT_4 results/ip4quic43route.txt
 fi
 
-ARGS="https://www.youtube.com/watch?v=$VIDEO_ID -6 --p $PORTS --qver Q035 $MAX_TIME_ARG"
+ARGS="-6 --p $PORTS --qver Q035 $MAX_TIME_ARG https://www.youtube.com/watch?v=$VIDEO_ID"
 TEST_RESULT_6="$(./youtube_test $ARGS)"
 if [[ $TEST_RESULT_6 != *"YOUTUBE"* ]]; then
   TEST_RESULT_6="$(./youtube_test $ARGS)"
@@ -93,7 +93,7 @@ if [[ $TEST_RESULT_6 == *"YOUTUBE"* ]]; then
   bash print_route.sh $TEST_RESULT_6 results/ip6quic35route.txt
 fi
 
-ARGS="https://www.youtube.com/watch?v=$VIDEO_ID -6 --p $PORTS --qver Q039 $MAX_TIME_ARG"
+ARGS="-6 --p $PORTS --qver Q039 $MAX_TIME_ARG https://www.youtube.com/watch?v=$VIDEO_ID"
 TEST_RESULT_6="$(./youtube_test $ARGS)"
 if [[ $TEST_RESULT_6 != *"YOUTUBE"* ]]; then
   TEST_RESULT_6="$(./youtube_test $ARGS)"
@@ -103,7 +103,7 @@ if [[ $TEST_RESULT_6 == *"YOUTUBE"* ]]; then
   bash print_route.sh $TEST_RESULT_6 results/ip6quic39route.txt
 fi
 
-ARGS="https://www.youtube.com/watch?v=$VIDEO_ID -6 --p $PORTS --qver Q043 $MAX_TIME_ARG"
+ARGS="-6 --p $PORTS --qver Q043 $MAX_TIME_ARG https://www.youtube.com/watch?v=$VIDEO_ID"
 TEST_RESULT_6="$(./youtube_test $ARGS)"
 if [[ $TEST_RESULT_6 != *"YOUTUBE"* ]]; then
   TEST_RESULT_6="$(./youtube_test $ARGS)"

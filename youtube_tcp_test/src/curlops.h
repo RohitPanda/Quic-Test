@@ -22,8 +22,8 @@
 #ifndef CURLOPS_H_
 #define CURLOPS_H_
 
+#include <semaphore.h>
 #include "youtube-dl.h"
-#include "coro.h"
 
 struct myprogress {
   int stream;
@@ -32,8 +32,9 @@ struct myprogress {
   CURL *curl;
   struct {
 	  bool init;
-	  coro_context parser_coro;
-	  struct coro_stack parser_stack;
+	  pthread_t ffmpeg_thread;
+	  sem_t data_arrived_mutex;
+	  sem_t ffmpeg_awaits_mutex;
 	  uint8_t *curl_buffer;
 	  size_t bytes_avail;
   };

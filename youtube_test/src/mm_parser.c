@@ -22,7 +22,6 @@
 #include "mm_parser.h"
 #include "metrics.h"
 #include "youtube-dl.h"
-#include "coro.h"
 #include "attributes.h"
 #include "download_ops.h"
 #include <stdint.h>
@@ -43,19 +42,38 @@ extern metrics metric;
 //#define SEC2NANO 1000000000
 #define SEC2MILI 1000
 
-coro_context corou_main;
-
 static int read_packet(void *opaque, uint8_t *buf, int buf_size) {
 	struct myprogress *prog = ((struct myprogress *) opaque);
-
-	coro_transfer(&prog->parser_coro, &corou_main);
-
+	sem_post(&prog->ffmpeg_awaits_mutex);
+	sem_wait(&prog->data_arrived_mutex);
+	if (prog->bytes_avail == 0)
+		return AVERROR_EOF;
 	assert(prog->bytes_avail <= (size_t)buf_size);
-
 	memcpy(buf, prog->mm_parser_buffer, prog->bytes_avail);
-
 	return prog->bytes_avail;
 }
+
+unsigned long long calc_tb(int num, int den){
+
+	if (num > (int) (UINT64_MAX / SEC2PICO)) {
+		exit(EXIT_FAILURE);
+	}
+	return DIV_ROUND_CLOSEST(num * SEC2PICO, den);
+}
+
+void check_frame_metrics(AVPacket* pkt, uint64_t* ts_list_metrics, unsigned long long tb){
+	if (pkt->dts > 0) {
+		/*SA-102014. metric.TSnow is the overall timestamp for which both audio and video packets have been received,
+          it should not be changed for video frames only. This would not affect the flow when the video is received
+		slower than the audio, but if it's the other way around, then the results would be inaccurate
+        metric.TSnow = (pkt.dts * vtb) / (SEC2PICO / SEC2MILI);*/
+		*ts_list_metrics = (pkt->dts * tb) / (SEC2PICO / SEC2MILI);
+		/*SA-10214- checkstall should be called after the TS is updated for each stream, instead of when new packets
+          arrive, this ensures that we know exactly what time the playout would stop and stall would occur*/
+		checkstall(false);
+	}
+}
+
 
 void mm_parser(void *arg) {
 	struct myprogress *prog = ((struct myprogress *) arg);
@@ -63,22 +81,24 @@ void mm_parser(void *arg) {
 	void *buff = av_malloc(CURL_MAX_WRITE_SIZE);
 
 	AVIOContext *avio = avio_alloc_context(buff, CURL_MAX_WRITE_SIZE, 0,
-			prog, read_packet, NULL, NULL);
-
+										   prog, read_packet, NULL, NULL);
 	if (avio == NULL) {
 		exit(EXIT_FAILURE);
 	}
+
 	AVFormatContext *fmt_ctx = avformat_alloc_context();
 	if (fmt_ctx == NULL) {
 		exit(EXIT_FAILURE);
 	}
-    fmt_ctx->url = "video file";
+	fmt_ctx->url = "video file";
 	fmt_ctx->pb = avio;
+	fmt_ctx->error_recognition = 1;
+
 	int ret = avformat_open_input(&fmt_ctx, NULL, NULL, NULL);
+
 	if (ret < 0) {
 		exit(EXIT_FAILURE);
 	}
-
 	avformat_find_stream_info(fmt_ctx, NULL);
 
 	int videoStreamIdx = -1;
@@ -92,55 +112,34 @@ void mm_parser(void *arg) {
 		}
 	}
 
-	unsigned long long vtb = 0;
+	unsigned long long tb[2];// video, audio
 	if (videoStreamIdx != -1) {
-		int vnum = fmt_ctx->streams[videoStreamIdx]->time_base.num;
-		if (vnum > (int) (UINT64_MAX / SEC2PICO)) {
-			exit(EXIT_FAILURE);
-		}
-		int vden = fmt_ctx->streams[videoStreamIdx]->time_base.den;
-		vtb = DIV_ROUND_CLOSEST(vnum * SEC2PICO, vden);
+		tb[STREAM_VIDEO] = calc_tb(fmt_ctx->streams[videoStreamIdx]->time_base.num,
+								   fmt_ctx->streams[videoStreamIdx]->time_base.den);
 	}
-
-	unsigned long long atb = 0;
 	if (audioStreamIdx != -1) {
-		int anum = fmt_ctx->streams[audioStreamIdx]->time_base.num;
-		if (anum > (int) (UINT64_MAX / SEC2PICO)) {
-			exit(EXIT_FAILURE);
-		}
-		int aden = fmt_ctx->streams[audioStreamIdx]->time_base.den;
-		atb = DIV_ROUND_CLOSEST(anum * SEC2PICO, aden);
+		tb[STREAM_AUDIO] = calc_tb(fmt_ctx->streams[audioStreamIdx]->time_base.num,
+								   fmt_ctx->streams[audioStreamIdx]->time_base.den);
 	}
 
 	AVPacket pkt;
 	av_init_packet(&pkt);
 	pkt.data = NULL;
 	pkt.size = 0;
-	while (av_read_frame(fmt_ctx, &pkt) >= 0) {
+	while (av_read_frame(fmt_ctx, &pkt) >= AVERROR_EOF) {
 		if (pkt.stream_index == videoStreamIdx) {
-			if (pkt.dts > 0) {
-                /*SA-102014. metric.TSnow is the overall timestamp for which both audio and video packets have been received,
-                  it should not be changed for video frames only. This would not affect the flow when the video is received
-				  slower than the audio, but if it's the other way around, then the results would be inaccurate 
-                    metric.TSnow = (pkt.dts * vtb) / (SEC2PICO / SEC2MILI);*/
-				metric.TSlist[STREAM_VIDEO] = (pkt.dts * vtb) / (SEC2PICO / SEC2MILI);
-				/*SA-10214- checkstall should be called after the TS is updated for each stream, instead of when new packets 
-				  arrive, this ensures that we know exactly what time the playout would stop and stall would occur*/ 
-				checkstall(false); 
-			}
+			check_frame_metrics(&pkt, &metric.TSlist[STREAM_VIDEO], tb[STREAM_VIDEO]);
 		} else if (pkt.stream_index == audioStreamIdx) {
-			if (pkt.dts > 0) {
-				metric.TSlist[STREAM_AUDIO] = (pkt.dts * atb) / (SEC2PICO / SEC2MILI);
-				/*SA-10214- checkstall should be called after the TS is updated for each stream, instead of when new packets 
-				  arrive, this ensures that we know exactly what time the playout would stop and stall would occur*/ 
-				checkstall(false); 
-			}
+			check_frame_metrics(&pkt, &metric.TSlist[STREAM_AUDIO], tb[STREAM_AUDIO]);
 		}
 		av_packet_unref(&pkt);
 	}
 	avformat_close_input(&fmt_ctx);
 	avformat_free_context(fmt_ctx);
 	av_free(avio);
+
+	sem_destroy(&prog->data_arrived_mutex);
+	sem_destroy(&prog->ffmpeg_awaits_mutex);
 
 	return;
 }

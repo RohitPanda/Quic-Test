@@ -25,7 +25,6 @@ include_directories(../quic_probe/include src)
 
 add_executable(youtube_test
         src/adaptive.c
-        src/coro.c
         src/download_ops.c
         src/getinfo.c
         src/helper.c

@@ -97,6 +97,9 @@ void mm_parser(void *arg) {
 	int ret = avformat_open_input(&fmt_ctx, NULL, NULL, NULL);
 
 	if (ret < 0) {
+	    char error[500];
+	    av_strerror(ret, error, 500);
+	    printf("ffpeg error:%s\n", error);
 		exit(EXIT_FAILURE);
 	}
 	avformat_find_stream_info(fmt_ctx, NULL);

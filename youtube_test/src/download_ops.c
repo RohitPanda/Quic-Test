@@ -38,7 +38,7 @@ extern struct program_arguments program_arguments;
 static size_t write_data(void *ptr, size_t size, void *userdata) {
 	struct myprogress *p = (struct myprogress *)userdata;
 
-	p->mm_parser_buffer = (uint8_t*)ptr;
+	memcpy(p->mm_parser_buffer, ptr, size);
 	p->bytes_avail = size;
 	/* Tell the coroutines there is new data */
 	if(!p->init) {
@@ -135,7 +135,6 @@ static int process_output(struct myprogress *prog, struct output_data *download_
 
 static void free_ffmpeg_threads(struct myprogress * prog){
 	for(int i = 0; i < metric.numofstreams; i++){
-		prog[i].mm_parser_buffer = NULL;
 		prog[i].bytes_avail = 0;
 		sem_post(&prog[i].data_arrived_mutex);
 	}

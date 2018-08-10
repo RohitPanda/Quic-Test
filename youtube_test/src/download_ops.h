@@ -33,7 +33,7 @@ struct myprogress {
 	  pthread_t ffmpeg_thread;
 	  sem_t data_arrived_mutex;
 	  sem_t ffmpeg_awaits_mutex;
-	  uint8_t *mm_parser_buffer;
+	  uint8_t mm_parser_buffer[CURL_MAX_WRITE_SIZE];
 	  size_t bytes_avail;
 	  size_t max_size;
   };

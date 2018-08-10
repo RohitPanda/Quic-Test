@@ -24,7 +24,7 @@ if [ "" == "$PKG_OK" ]; then
   wget https://dl.google.com/go/go1.4-bootstrap-20171003.tar.gz || exit -1
   tar -xzf go1.4-bootstrap-20171003.tar.gz
   cd go/src
-  ./all.bash
+  sudo ./all.bash
   cd ../..
   export PATH=$PWD/go/bin:$PATH
 fi
@@ -86,7 +86,7 @@ wget --no-check-certificate "https://ffmpeg.org/releases/ffmpeg-${FFMPEG_VERSION
 tar -xf ffmpeg-${FFMPEG_VERSION}.tar.gz
 cd ffmpeg-${FFMPEG_VERSION}
 mkdir -p build
-./configure --disable-shared --prefix=/ --libdir=/lib --disable-all --enable-avformat --enable-avcodec --enable-avutil --enable-demuxer=mov --enable-demuxer=matroska --enable-demuxer=flv --disable-debug --enable-lto --enable-small --disable-zlib --disable-bzlib --disable-pthreads --enable-protocol=file
+./configure --enable-shared --prefix=$PWD/build --disable-all --enable-avformat --enable-avcodec --enable-avutil --enable-demuxer=mov --enable-demuxer=matroska --enable-demuxer=flv --disable-debug --enable-lto --enable-small --disable-zlib --disable-bzlib --disable-pthreads --enable-protocol=file
 make install DESTDIR=$PWD/build/
 cd ..
 

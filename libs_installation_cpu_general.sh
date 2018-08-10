@@ -87,7 +87,7 @@ tar -xf ffmpeg-${FFMPEG_VERSION}.tar.gz
 cd ffmpeg-${FFMPEG_VERSION}
 mkdir -p build
 ./configure --enable-shared --prefix=$PWD/build --disable-all --enable-avformat --enable-avcodec --enable-avutil --enable-demuxer=mov --enable-demuxer=matroska --enable-demuxer=flv --disable-debug --enable-lto --enable-small --disable-zlib --disable-bzlib --disable-pthreads --enable-protocol=file
-make install DESTDIR=$PWD/build/
+make install
 cd ..
 
 PKG_OK=$(ldconfig -p | grep /lib/libevent)

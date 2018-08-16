@@ -8,7 +8,7 @@ Tests were build on Ubuntu 16 LTS.
 
 ## Quickstart
 
-To install libraries, run bash ./libs_installation.sh.<br>
+To install libraries, run bash ./libs_installation.sh for x64_86 or ./libs_installation_cpu_general.sh to build all dependencies from source code.<br>
 Script requires installed build-essential tools, especially gcc and make. To download all distributives with wget, please set up all settings like proxy in advance. <br>
 QUIC YouTube test requires: lsquic, ffmpeg, libevent.<br>
 YouTube test (tcp_youtube_test) requires: ffmgep, curl, yasm, zlib. Curl should be built locally to disable extra features and use the same encryption library for both tests.<br>

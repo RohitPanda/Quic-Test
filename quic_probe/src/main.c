@@ -55,7 +55,7 @@ void read_result(struct quic_engine_shell* client, const char* file_name, double
 }
 
 #define BUFFER_SIZE 10 * 1024 * 1024
-#define QUIC_VERSION "Q039"
+#define QUIC_VERSION "Q044"
 
 
 struct time_vals{
@@ -91,28 +91,52 @@ size_t write_callback(void* data, size_t size, void *userdata) {
 
 int main(int argc, char **argv)
 {
+    int opt;
     uint ports[] = {3089, 3090, 3091};
-	quic_args quic_args_ref =
+
+    quic_args quic_args_ref =
     {
-        .is_ipv4 = 1,
-		.quic_ver_str = QUIC_VERSION,
-		.quic_ver_str_size = strlen(QUIC_VERSION),
-		.timeout_ms = 60000 * 10,
-		.use_prev_conn_data = 0,
-		.local_port_numbers = ports,
+//        .is_ipv4 = 1,
+//		.quic_ver_str = QUIC_VERSION,
+//        .quic_ver_str_size = strlen(QUIC_VERSION),
+        .timeout_ms = 60000 * 10,
+        .use_prev_conn_data = 0,
+        .local_port_numbers = ports,
         .port_count = sizeof(ports)/sizeof(*ports),
-		.max_streams = 10,
+        .max_streams = 10,
         .is_debug = 0,
         .is_one_conn_per_stream = 0
 
-	};
+    };
+
+    char *url;
+    while (-1 != (opt = getopt(argc, argv, "46V:S:")))
+    {
+        switch (opt) {
+        case '4':
+            quic_args_ref.is_ipv4 = 1;
+            break;
+        case '6':
+            quic_args_ref.is_ipv4 = 0;
+            break;
+        case 'V':
+            quic_args_ref.quic_ver_str = optarg;
+            quic_args_ref.quic_ver_str_size = 4;
+            break;
+        case 'S':
+            url = malloc(sizeof(len(optarg)));
+            strcpy(url, optarg);
+        }
+    }
+
     struct quic_engine_shell* quic_engine_ref;
     int is_created = create_client(&quic_engine_ref, &quic_args_ref);
     if(is_created == -1)
         exit(-1);
     double total_time_s = 0;
 
-    int times = 10;
+
+    int times = 1;
 
     for(int i = 0; i < times; i++)
     {
@@ -121,12 +145,12 @@ int main(int argc, char **argv)
                 .downloaded_size = 0
         };
 
-        struct download_request download_requests2[2];
-        download_requests2[0].url_request.url_data = argv[1];
-        download_requests2[0].url_request.url_len = strlen(download_requests2[0].url_request.url_data);
-        download_requests2[0].on_write = write_callback;
-        download_requests2[0].write_argument = &vals;
-        download_requests2[0].header_only = 0;
+        struct download_request download_requests[2];
+        download_requests[0].url_request.url_data = url;
+        download_requests[0].url_request.url_len = strlen(download_requests[0].url_request.url_data);
+        download_requests[0].on_write = write_callback;
+        download_requests[0].write_argument = &vals;
+        download_requests[0].header_only = 0;
 
         // test timeout
 //        download_requests2[1].url_request.url_data = "http://www.google.com";
@@ -135,14 +159,14 @@ int main(int argc, char **argv)
 //        download_requests2[1].header_only = 0;
 
 
-        download_requests2[0].buffer.buffer = NULL;
-        download_requests2[0].buffer.allocated_size = 0;
-        download_requests2[0].buffer.used_size = 0;
+        download_requests[0].buffer.buffer = NULL;
+        download_requests[0].buffer.allocated_size = 0;
+        download_requests[0].buffer.used_size = 0;
 //        download_requests2[1].buffer.buffer = malloc(BUFFER_SIZE);
 //        download_requests2[1].buffer.allocated_size = BUFFER_SIZE;
 //        download_requests2[1].buffer.used_size = 0;
 
-        start_downloading(quic_engine_ref, download_requests2, 1);
+        start_downloading(quic_engine_ref, download_requests, 1);
         clock_gettime(CLOCK_MONOTONIC, &vals.start_time);
 
         read_result(quic_engine_ref, "video_quic.txt", &total_time_s);

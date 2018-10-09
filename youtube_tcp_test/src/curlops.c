@@ -273,6 +273,7 @@ long getfilesize(const char* url)
 	error |= curl_easy_setopt(curl_handle, CURLOPT_NOBODY, 1);
 	error |= curl_easy_setopt(curl_handle, CURLOPT_URL, url);
 	error |= curl_easy_setopt(curl_handle, CURLOPT_SSL_VERIFYPEER, 0);
+    error |= curl_easy_setopt(curl_handle, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_2_0);
 
 	if(error) {
 		curl_easy_cleanup(curl_handle);
@@ -345,7 +346,7 @@ int initialize_curl_handle( CURL ** http_handle_ref, int i, videourl * url, stru
 	/* set options */
     if (program_arguments.instantaneous_output)
     	puts(url_now);
-	my_curl_easy_returnhandler(curl_easy_setopt(http_handle, CURLOPT_URL, url_now),i);
+    my_curl_easy_returnhandler(curl_easy_setopt(http_handle, CURLOPT_URL, url_now),i);
 	set_ip_version(http_handle, program_arguments.ip_version);
 	/* if redirected, tell libcurl to follow redirection */
 	my_curl_easy_returnhandler(curl_easy_setopt(http_handle , CURLOPT_FOLLOWLOCATION, 1L),i);
@@ -357,6 +358,7 @@ int initialize_curl_handle( CURL ** http_handle_ref, int i, videourl * url, stru
 	my_curl_easy_returnhandler(curl_easy_setopt(http_handle, CURLOPT_REFERER, metric.link),i);
 	my_curl_easy_returnhandler(curl_easy_setopt(http_handle, CURLOPT_SSL_VERIFYPEER, 0),i);
 	my_curl_easy_returnhandler(curl_easy_setopt(http_handle, CURLOPT_SSLVERSION, CURL_SSLVERSION_MAX_TLSv1_3),i);
+    my_curl_easy_returnhandler(curl_easy_setopt(http_handle, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_2_0),i);
 	/*setting the progress function only when range is not given, otherwise interim results are published for each chunk only*/
 	prog->curl = http_handle;
 	my_curl_easy_returnhandler(curl_easy_setopt(http_handle, CURLOPT_NOPROGRESS, 0L),i);

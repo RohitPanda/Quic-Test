@@ -167,6 +167,7 @@ static int download_to_memory(char* url, void *memory) {
 	error |= curl_easy_setopt(curl, CURLOPT_WRITEDATA, memory);
 	error |= curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0);
 	error |= curl_easy_setopt(curl, CURLOPT_SSLVERSION, CURL_SSLVERSION_MAX_TLSv1_3);
+    error |= curl_easy_setopt(curl, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_2_0);
 
 	if(error) {
         if(curl)

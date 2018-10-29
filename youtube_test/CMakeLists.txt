@@ -4,9 +4,9 @@ project(youtube_test)
 set(CMAKE_C_STANDARD 11)
 set(LIB_DIR  ${CMAKE_CURRENT_LIST_DIR}/../build)
 
-find_library(AVFORMAT avformat HINTS ${LIB_DIR}/ffmpeg-4.0/build/lib REQUIRED)
-find_library(AVCODEC avcodec HINTS ${LIB_DIR}/ffmpeg-4.0/build/lib REQUIRED)
-find_library(AVUTIL avutil HINTS ${LIB_DIR}/ffmpeg-4.0/build/lib REQUIRED)
+find_library(AVFORMAT libavformat.a HINTS ${LIB_DIR}/ffmpeg-4.0/build/lib REQUIRED)
+find_library(AVCODEC libavcodec.a HINTS ${LIB_DIR}/ffmpeg-4.0/build/lib REQUIRED)
+find_library(AVUTIL libavutil.a HINTS ${LIB_DIR}/ffmpeg-4.0/build/lib REQUIRED)
 find_library(SSL ssl HINTS ${LIB_DIR}/boringssl/lib REQUIRED)
 find_library(CRYPTO crypto HINTS ${LIB_DIR}/boringssl/lib REQUIRED)
 
